@@ -1,0 +1,12 @@
+
+# ✅ LESSON: Function vs Method Invocation
+
+# Function → Works on data passed to it
+result = len("hello")        # function(data)
+
+# Method → Called from the data itself
+result = "hello".upper()     # data.method()
+
+# 🔍 Summary:
+# Function:    result = function(arg)
+# Method:      result = data.method(arg)
