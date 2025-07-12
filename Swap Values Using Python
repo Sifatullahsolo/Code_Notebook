@@ -1,0 +1,6 @@
+# ✅ LESSON: Swap Values Using Python
+
+variable_1, variable_2 = variable_2, variable_1
+my_list[0], my_list[4] = my_list[4], my_list[0]
+
+# 🔁 Python allows easy value swapping without temp variables
