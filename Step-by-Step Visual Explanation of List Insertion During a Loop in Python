@@ -1,0 +1,112 @@
+
+my_list = [1, 2, 3]
+
+for v in range(len(my_list)):  # len(my_list) is 3, so loop runs 3 times
+    my_list.insert(1, my_list[v])  # insert element at index 1
+
+print(my_list)  # Output: [1, 1, 1, 1, 2, 3]
+```
+
+---
+
+### Step 1: Initial list
+
+| Index | 0 | 1 | 2 |
+| ----- | - | - | - |
+| Value | 1 | 2 | 3 |
+
+---
+
+### Loop details:
+
+* `range(len(my_list))` is **fixed** as `range(3)` because `len(my_list)` is 3 at the start.
+* So the loop runs **3 times** with `v = 0, 1, 2`.
+
+---
+
+### Step 2: Loop iteration 0 (`v = 0`)
+
+* `my_list[v]` → `my_list[0]` → **1**
+* Insert `1` at index 1
+
+Before insert:
+
+| 0 | 1 | 2 |
+| - | - | - |
+| 1 | 2 | 3 |
+
+After insert:
+
+| 0 | 1 | 2 | 3 |
+| - | - | - | - |
+| 1 | 1 | 2 | 3 |
+
+---
+
+### Step 3: Loop iteration 1 (`v = 1`)
+
+* Now the list is `[1, 1, 2, 3]`
+* `my_list[v]` → `my_list[1]` → **1** (because index 1 now holds the inserted `1`)
+* Insert `1` at index 1 again
+
+Before insert:
+
+| 0 | 1 | 2 | 3 |
+| - | - | - | - |
+| 1 | 1 | 2 | 3 |
+
+After insert:
+
+| 0 | 1 | 2 | 3 | 4 |
+| - | - | - | - | - |
+| 1 | 1 | 1 | 2 | 3 |
+
+---
+
+### Step 4: Loop iteration 2 (`v = 2`)
+
+* Now the list is `[1, 1, 1, 2, 3]`
+* `my_list[v]` → `my_list[2]` → **1** (because index 2 holds the newly inserted `1`)
+* Insert `1` at index 1 again
+
+Before insert:
+
+| 0 | 1 | 2 | 3 | 4 |
+| - | - | - | - | - |
+| 1 | 1 | 1 | 2 | 3 |
+
+After insert:
+
+| 0 | 1 | 2 | 3 | 4 | 5 |
+| - | - | - | - | - | - |
+| 1 | 1 | 1 | 1 | 2 | 3 |
+
+---
+
+### Final list:
+
+```
+[1, 1, 1, 1, 2, 3]
+```
+
+---
+
+### Why does it insert 1 again and again?
+
+* The `v` counts 0, 1, 2 (fixed before the loop).
+* But **the list grows inside the loop** by inserting at position 1.
+* This shifts the existing elements to the right.
+* When `v=1` or `v=2`, the element at those indexes **has already changed** to 1 because of previous inserts.
+* So it keeps inserting `1` at position 1.
+
+---
+
+### Summary:
+
+| Iteration | List before insert | `my_list[v]` (value inserted) | List after insert   |
+| --------- | ------------------ | ----------------------------- | ------------------- |
+| 0         | \[1, 2, 3]         | 1                             | \[1, 1, 2, 3]       |
+| 1         | \[1, 1, 2, 3]      | 1                             | \[1, 1, 1, 2, 3]    |
+| 2         | \[1, 1, 1, 2, 3]   | 1                             | \[1, 1, 1, 1, 2, 3] |
+
+
