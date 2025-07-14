@@ -1,0 +1,32 @@
+ list comprehension
+
+
+# Square numbers 0–4
+squares = [x**2 for x in range(5)]  # [0, 1, 4, 9, 16]
+
+# Even numbers from 0–9
+evens = [x for x in range(10) if x % 2 == 0]  # [0, 2, 4, 6, 8]
+
+# Uppercase all words
+words = ["hi", "there"]
+upper_words = [w.upper() for w in words]  # ['HI', 'THERE']
+
+# Create list of tuples (x, x^2)
+tuples = [(x, x**2) for x in range(3)]  # [(0, 0), (1, 1), (2, 4)]
+
+# Filter vowels
+letters = "abcdefg"
+vowels = [ch for ch in letters if ch in "aeiou"]  # ['a', 'e']
+
+# Flatten nested list
+matrix = [[1, 2], [3, 4]]
+flat = [num for row in matrix for num in row]  # [1, 2, 3, 4]
+
+# Replace even with "even"
+nums = [1, 2, 3, 4]
+tagged = ["even" if x % 2 == 0 else x for x in nums]  # [1, 'even', 3, 'even']
+
+# Get digits from string
+s = "a1b2c3"
+digits = [ch for ch in s if ch.isdigit()]  # ['1', '2', '3']
+```
