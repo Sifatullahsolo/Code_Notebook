@@ -1,0 +1,32 @@
+
+### 🧠 Full Summary Table of Common Python Exceptions
+
+| **Exception Type**    | **When It Happens**                                                           | **Example Code**                        |
+| --------------------- | ----------------------------------------------------------------------------- | --------------------------------------- |
+| `ZeroDivisionError`   | You divide by 0 using `/`, `//`, or `%`                                       | `x = 10 / 0`                            |
+| `ValueError`          | Right type, wrong value (e.g., `"abc"` can’t be an integer)                   | `int("abc")`                            |
+| `TypeError`           | Wrong type used in an operation                                               | `my_list[0.5]`                          |
+| `AttributeError`      | You called a method that doesn’t exist for that object                        | `my_list.depend(3)`                     |
+| `SyntaxError`         | Code violates Python grammar (usually missing punctuation or wrong structure) | `if x > 0 print("Hi")`                  |
+| `IndexError`          | You try to access a list index that doesn’t exist                             | `x = [1, 2][5]`                         |
+| `KeyError`            | You try to access a dictionary key that doesn't exist                         | `my_dict = {}; my_dict["key"]`          |
+| `ImportError`         | Python can’t find the module you are trying to import                         | `import not_a_real_module`              |
+| `ModuleNotFoundError` | A specific type of `ImportError` when the module is missing entirely          | `import fake_module`                    |
+| `NameError`           | You use a variable that hasn’t been defined yet                               | `print(x)` (if `x` wasn’t defined)      |
+| `FileNotFoundError`   | You try to open a file that doesn't exist                                     | `open("missing.txt")`                   |
+| `IndentationError`    | Your code isn’t aligned correctly (bad indentation)                           | `def func():\nprint("hello")`           |
+| `RuntimeError`        | Something went wrong that doesn’t fit other categories                        | `raise RuntimeError("Oops")`            |
+| `StopIteration`       | You try to continue iterating past the end of an iterator                     | `next(iter([]))`                        |
+| `OverflowError`       | Number is too big to handle (rare in Python, but can happen with floats)      | `math.exp(1000)`                        |
+| `MemoryError`         | Python runs out of memory                                                     | `a = [1] * 10**10`                      |
+| `RecursionError`      | You called a function too many times (infinite recursion)                     | `def f(): f(); f()`                     |
+| `IOError`             | Input/output operation fails (old name, now often replaced by `OSError`)      | `open("file.txt", "r")` (if file fails) |
+| `PermissionError`     | You try to open/write a file without permission                               | `open("/root/secret.txt")`              |
+
+---
+
+### ✅ Tips
+
+* These are the most **practical** exceptions for beginners and intermediate learners.
+* You **don’t need to memorize** all of them — learn them as you encounter them.
+* Use `except SpecificError:` for **clear and precise error handling**
