@@ -1,0 +1,131 @@
+
+
+## **1. Lists (`list`)**
+Lists are **ordered, mutable** (changeable) collections.
+
+### **List Methods**
+| Method | Description | Example |
+|--------|-------------|---------|
+| `append(x)` | Adds `x` to the end | `lst.append(5)` |
+| `extend(iterable)` | Adds all elements from `iterable` | `lst.extend([5,6])` |
+| `insert(i, x)` | Inserts `x` at index `i` | `lst.insert(1, 10)` |
+| `remove(x)` | Removes first occurrence of `x` | `lst.remove(5)` |
+| `pop([i])` | Removes & returns item at `i` (default last) | `lst.pop()` |
+| `clear()` | Removes all items | `lst.clear()` |
+| `index(x)` | Returns index of first `x` | `lst.index(5)` |
+| `count(x)` | Counts occurrences of `x` | `lst.count(5)` |
+| `sort(key=None, reverse=False)` | Sorts the list | `lst.sort()` |
+| `reverse()` | Reverses the list | `lst.reverse()` |
+| `copy()` | Returns a shallow copy | `lst.copy()` |
+
+### **List Functions**
+| Function | Description | Example |
+|----------|-------------|---------|
+| `len(lst)` | Returns length | `len([1,2,3]) → 3` |
+| `sorted(lst)` | Returns a sorted list | `sorted([3,1,2]) → [1,2,3]` |
+| `min(lst)` | Returns smallest element | `min([1,2,3]) → 1` |
+| `max(lst)` | Returns largest element | `max([1,2,3]) → 3` |
+| `sum(lst)` | Sums all elements | `sum([1,2,3]) → 6` |
+
+### **List Slicing**
+```python
+lst = [1, 2, 3, 4, 5]
+print(lst[1:4])  # [2, 3, 4]
+print(lst[::-1]) # [5, 4, 3, 2, 1] (reverse)
+```
+
+---
+
+## **2. Dictionaries (`dict`)**
+Dictionaries are **unordered, mutable** key-value pairs.
+
+### **Dictionary Methods**
+| Method | Description | Example |
+|--------|-------------|---------|
+| `get(key[, default])` | Returns value for `key` (or `default`) | `d.get("a", 0)` |
+| `items()` | Returns `(key, value)` pairs | `d.items()` |
+| `keys()` | Returns all keys | `d.keys()` |
+| `values()` | Returns all values | `d.values()` |
+| `pop(key[, default])` | Removes `key` & returns its value | `d.pop("a")` |
+| `popitem()` | Removes & returns last `(key, value)` | `d.popitem()` |
+| `update(dict2)` | Merges `dict2` into `dict` | `d.update({"b":2})` |
+| `clear()` | Removes all items | `d.clear()` |
+| `setdefault(key[, default])` | Sets `key` if not exists | `d.setdefault("a", 1)` |
+| `copy()` | Returns a shallow copy | `d.copy()` |
+
+### **Dictionary Functions**
+| Function | Description | Example |
+|----------|-------------|---------|
+| `len(d)` | Returns number of keys | `len({"a":1}) → 1` |
+| `dict.fromkeys(keys, value)` | Creates dict with given keys | `dict.fromkeys(["a","b"], 0)` |
+
+### **Dictionary Comprehension**
+```python
+squares = {x: x**2 for x in range(5)}
+# {0:0, 1:1, 2:4, 3:9, 4:16}
+```
+
+---
+
+## **3. Tuples (`tuple`)**
+Tuples are **ordered, immutable** (unchangeable) sequences.
+
+### **Tuple Methods**
+| Method | Description | Example |
+|--------|-------------|---------|
+| `count(x)` | Counts occurrences of `x` | `t.count(5)` |
+| `index(x)` | Returns index of first `x` | `t.index(5)` |
+
+### **Tuple Functions**
+| Function | Description | Example |
+|----------|-------------|---------|
+| `len(t)` | Returns length | `len((1,2,3)) → 3` |
+| `sorted(t)` | Returns sorted list | `sorted((3,1,2)) → [1,2,3]` |
+| `min(t)` | Returns smallest element | `min((1,2,3)) → 1` |
+| `max(t)` | Returns largest element | `max((1,2,3)) → 3` |
+| `sum(t)` | Sums all elements | `sum((1,2,3)) → 6` |
+
+### **Tuple Unpacking**
+```python
+a, b, c = (1, 2, 3)
+print(a, b, c)  # 1 2 3
+```
+
+---
+
+## **4. Common Operations**
+### **Membership Check**
+```python
+if 5 in [1, 2, 5]:  # Works for lists, tuples, dict keys
+    print("Found")
+```
+
+### **Iteration**
+```python
+for item in [1, 2, 3]:  # Works for lists, tuples, dict keys
+    print(item)
+```
+
+### **Conversion**
+```python
+list((1, 2, 3))    # [1, 2, 3] (tuple → list)
+tuple([1, 2, 3])    # (1, 2, 3) (list → tuple)
+dict([("a",1)])     # {"a":1} (list of tuples → dict)
+```
+
+---
+
+## **5. When to Use Which?**
+| Type | When to Use |
+|------|-------------|
+| **List** | When you need an ordered, modifiable collection |
+| **Dictionary** | When you need key-value pairs (fast lookups) |
+| **Tuple** | When you need an ordered, unmodifiable collection |
+
+---
+
+### Summary
+- **Lists** → Mutable, ordered, many methods (`append`, `pop`, `sort`).
+- **Dictionaries** → Mutable, unordered, key-value pairs (`get`, `items`, `update`).
+- **Tuples** → Immutable, ordered, fewer methods (`count`, `index`).
+
