@@ -23,10 +23,125 @@
 | `IOError`             | Input/output operation fails (old name, now often replaced by `OSError`)      | `open("file.txt", "r")` (if file fails) |
 | `PermissionError`     | You try to open/write a file without permission                               | `open("/root/secret.txt")`              |
 
+
 ---
 
-### ✅ Tips
+### 🔴 ZeroDivisionError
 
-* These are the most **practical** exceptions for beginners and intermediate learners.
-* You **don’t need to memorize** all of them — learn them as you encounter them.
-* Use `except SpecificError:` for **clear and precise error handling**
+| Example                          | Description                               |
+| -------------------------------- | ----------------------------------------- |
+| `x = 1 / 0`                      | Simple division by zero                   |
+| `x = 10 // 0`                    | Floor division by zero                    |
+| `x = 5 % 0`                      | Modulo division by zero                   |
+| `x = 100 / int('0')`             | Converts string `'0'` then divides        |
+| `def div(): return 1 / 0; div()` | Inside a function, still throws the error |
+
+---
+
+### 🔵 ValueError
+
+| Example        | Description                          |
+| -------------- | ------------------------------------ |
+| `int('abc')`   | String cannot be converted to int    |
+| `float('xyz')` | String not convertible to float      |
+| `hex('hi')`    | Invalid value for hex                |
+| `int('')`      | Empty string passed to `int()`       |
+| `int('12.34')` | Decimal string not valid for `int()` |
+
+---
+
+### 🟢 TypeError
+
+| Example          | Description                |
+| ---------------- | -------------------------- |
+| `[1, 2, 3]['1']` | Using string as list index |
+| `'2' + 2`        | Adding string and integer  |
+| `len(5)`         | Using `len()` on a number  |
+| `None + 1`       | Adding `None` to a number  |
+| `sorted(5)`      | Sorting an integer         |
+
+---
+
+### 🟡 AttributeError
+
+| Example               | Description                       |
+| --------------------- | --------------------------------- |
+| `[1, 2].upper()`      | Lists don’t have `upper()`        |
+| `'hello'.append('!')` | Strings don’t have `append()`     |
+| `None.append(1)`      | `NoneType` has no `append()`      |
+| `(3).split()`         | Integers have no `split()`        |
+| `10.lower()`          | Integers don’t support `.lower()` |
+
+---
+
+### 🟣 SyntaxError *(simulated via `exec()` or `eval()`)*
+
+| Example                             | Description                        |
+| ----------------------------------- | ---------------------------------- |
+| `eval('if x > 5 print(x)')`         | Missing `:` in `if`                |
+| `exec('def func print()')`          | Missing `:` in function definition |
+| `exec('for i in range(5 print(i)')` | Broken `for` loop                  |
+| `exec('class: Test')`               | Invalid class syntax               |
+| `exec('x === 5')`                   | Invalid comparison operator `===`  |
+
+---
+
+### 🔘 IndexError
+
+| Example           | Description                              |
+| ----------------- | ---------------------------------------- |
+| `[1, 2, 3][5]`    | Index out of list range                  |
+| `x = []; x[0]`    | Empty list, accessing first element      |
+| `x = [1]; x[-2]`  | Negative index beyond limit              |
+| `list('abc')[10]` | String converted to list, index too high |
+| `(1, 2)[2]`       | Tuple index out of range                 |
+
+---
+
+### 🔑 KeyError
+
+| Example                     | Description                                           |
+| --------------------------- | ----------------------------------------------------- |
+| `{'a': 1}['b']`             | Key `'b'` doesn’t exist                               |
+| `dict()['missing']`         | Empty dictionary                                      |
+| `{}.pop('not_there')`       | Trying to remove missing key                          |
+| `x = {}; del x['nope']`     | Deleting a missing key                                |
+| `{'x': 2}.get('y').split()` | `get()` returns `None` → then `.split()` causes error |
+
+---
+
+### 📦 ImportError
+
+| Example                            | Description                 |
+| ---------------------------------- | --------------------------- |
+| `import mathy`                     | No such module              |
+| `from math import squareroot`      | No such function in module  |
+| `from os import random`            | `random` not in `os`        |
+| `from datetime import unknowndate` | Fake class                  |
+| `import nonexistingmodule`         | Entire module doesn’t exist |
+
+---
+
+### 🆎 NameError
+
+| Example                         | Description                |
+| ------------------------------- | -------------------------- |
+| `print(unknown_var)`            | Variable not defined       |
+| `len(nothing_here)`             | Using undefined name       |
+| `result + 10`                   | `result` isn’t defined yet |
+| `x = y + z`                     | Both `y` and `z` undefined |
+| `print(not_defined_function())` | Function never declared    |
+
+---
+
+### 📁 FileNotFoundError
+
+| Example                            | Description                              |
+| ---------------------------------- | ---------------------------------------- |
+| `open('no_file.txt')`              | File doesn’t exist                       |
+| `with open('abc.jpg') as f: pass`  | File not found                           |
+| `read_file = open('missing.csv')`  | File is missing                          |
+| `f = open('/not/here.doc')`        | Invalid file path                        |
+| `lines = open('ghost.txt').read()` | Trying to read a file that doesn’t exist |
+
+---
