@@ -38,8 +38,8 @@ print(not a)    # False
 
 | Operator    | Symbol | Example  | Meaning                        |
 | ----------- | ------ | -------- | ------------------------------ |
-| AND         |   &    | 5 & 3    | Bitwise AND                    |
-| OR          |   |    | 5 | 3    | Bitwise OR                     |
+| AND         |  &     | 5 & 3    | Bitwise AND                    |
+| OR          |  |     | 5 | 3    | Bitwise OR                     |
 | XOR         |  ^     | 5 ^ 3    | Bitwise exclusive OR           |
 | NOT         |  ~     |  ~5      | Bitwise NOT (inverts all bits) |
 | Shift Left  |  <<    | 5 << 1   | Shifts bits to the left        |
@@ -73,46 +73,64 @@ print(5 & 3)
  |  OR
 
 print(5 | 3)  # 0101 | 0011 = 0111 => 7
+"""             0101
+                0011
+                0111  = 0111 => 7
+"""
 
 
-#### `^` XOR
+
+^   XOR = Exclusive OR
+"Exclusive" means: only one must be true, not both.
+
 
 print(5 ^ 3)  # 0101 ^ 0011 = 0110 => 6
+0101
+0011
+----
+0110 => 6
+
+| Bit A | Bit B | A XOR B |
+| ----- | ----- | ------- |
+| 0     | 0     | 0       |
+| 0     | 1     | 1       |
+| 1     | 0     | 1       |
+| 1     | 1     | 0       |
 
 
-#### `~` NOT (bitwise complement)
 
+
+
+~  NOT (bitwise complement)
+#################################### LEARN 2 COMPLEMETN WHEN U GET  TIME.
 print(~5)     # ~00000101 = 11111010 (in 2's complement: -6)
 
 
-#### `<<` Left Shift
-
-```python
+#### << Left Shift
 print(5 << 1) # 00000101 << 1 = 00001010 => 10
-```
+
+
 
 #### `>>` Right Shift
-
-```python
 print(5 >> 1) # 00000101 >> 1 = 00000010 => 2
-```
 
----
+
+
 
 ## 🎯 Summary Table
 
-| Operation        | Type    | Example   | Result  |     |     |
-| ---------------- | ------- | --------- | ------- | --- | --- |
-| `True and False` | Logical | `a and b` | `False` |     |     |
-| `5 & 3`          | Bitwise | `a & b`   | `1`     |     |     |
-| `True or True`   | Logical | `a or b`  | `True`  |     |     |
-| \`5              | 3\`     | Bitwise   | \`a     | b\` | `7` |
-| `not False`      | Logical | `not a`   | `True`  |     |     |
-| `~5`             | Bitwise | `~a`      | `-6`    |     |     |
-| `5 << 1`         | Bitwise | `a << 1`  | `10`    |     |     |
-| `5 >> 1`         | Bitwise | `a >> 1`  | `2`     |     |     |
+| Operation        | Type    | Example   | Result  
+| ---------------- | ------- | --------- | ------- 
+|   True and False | Logical | `a and b` | `False` 
+|  5 & 3           | Bitwise | `a & b`   | `1`     
+| True or True     | Logical | `a or b`  | `True`  
+|  5 | 3           | Bitwise |  a | b    | 7       
+| not False        | Logical | `not a`   | `True`  
+| ~5               | Bitwise |   ~a      | `-6`    
+| `5 << 1`         | Bitwise | `a << 1`  | `10`    
+| `5 >> 1`         | Bitwise | `a >> 1`  |   2     
 
----
+
 
 ## 🧠 Real-Life Analogy
 
@@ -124,19 +142,17 @@ print(5 >> 1) # 00000101 >> 1 = 00000010 => 2
 | `~`           | Flip every bit (ON becomes OFF)       | Reverse switch logic                    |
 | `<<` and `>>` | Multiply/divide by powers of 2        | Fast doubling or halving                |
 
----
+
 
 ## 🔁 Practice Test
 
-Can you guess the output?
 
-```python
 a = 6      # 0110
 b = 3      # 0011
 
-print(a & b)   # ?
-print(a | b)   # ?
-print(a ^ b)   # ?
-print(~a)      # ?
-print(a << 1)  # ?
-print(a >> 1)  # ?
+print(a & b)   # ? 2
+print(a | b)   # ? 7
+print(a ^ b)   # ? 5
+print(~a)      # ? 
+print(a << 1)  # ? 12
+print(a >> 1)  # ? 3
