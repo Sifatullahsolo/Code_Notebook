@@ -1,21 +1,14 @@
+✅ Full Lesson: Binary Numbers (1–20) – How to Read, Convert, and Memorize
 
 
+🔢 What Is Binary?
+
+Binary = Base-2 number system
+Only uses 0 and 1
+Used by all computers internally
 
 
-
-✅ **Full Lesson: Binary Numbers (1–20) – How to Read, Convert, and Memorize**
-
-
-
-## 🔢 What Is Binary?
-
-* Binary = **Base-2** number system
-* Only uses **0 and 1**
-* Used by all computers internally
-
----
-
-## 📊 Binary Table: Decimal 1 to 20
+📊 Binary Table: Decimal 1 to 20
 
 | Decimal | Binary |
 | ------- | ------ |
@@ -40,70 +33,16 @@
 | 19      | 10011  |
 | 20      | 10100  |
 
----
-
-## ⚙️ How Binary Works (Power of 2 Positions)
-
-From **right to left**, each digit represents:
-
-| Bit Position | Power of 2 | Value |
-| ------------ | ---------- | ----- |
-| Rightmost    | 2⁰         | 1     |
-|              | 2¹         | 2     |
-|              | 2²         | 4     |
-|              | 2³         | 8     |
-| Leftmost     | 2⁴         | 16    |
-
----
-
-### 🧠 Example: Convert 13 to Binary
-
-* 13 = 8 + 4 + 1
-* Powers used: `2³ + 2² + 2⁰`
-* Binary: `1101`
-
-### 🧠 Example: Convert Binary `1010` to Decimal
-
-* `1010` = `1×8 + 0×4 + 1×2 + 0×1` = **10**
-
----
-
-## 🎯 Shortcut to Memorize
-
-1. Practice powers of 2:
-   `1, 2, 4, 8, 16, 32, 64...`
-
-2. Use finger trick: Each finger = 1 bit
-
-   * From pinky to thumb: `1, 2, 4, 8, 16`
-
-3. Count 0–15 in binary on fingers (4-bit max)
-
-
-
-## 🧪 Python Trick to See Binary
-
-
-for i in range(1, 21):
-    print(f"{i:2} = {i:05b}")
-
-
-# Output:
- 1 = 00001
- 2 = 00010
-
-20 = 10100
 
 
 
 
 
+✅Full Lesson: Number Systems — Binary, Octal, and Hexadecimal
 
-✅ **Full Lesson: Number Systems — Binary, Octal, and Hexadecimal**
 
----
 
-## 1️⃣ Binary (Base 2)
+1️⃣ Binary (Base 2)
 
 * Uses digits: **0 and 1**
 * Each bit = power of 2
