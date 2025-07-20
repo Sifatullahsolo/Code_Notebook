@@ -35,38 +35,7 @@ Used by all computers internally
 
 
 
-
-
-
-✅Full Lesson: Number Systems — Binary, Octal, and Hexadecimal
-
-
-
-1️⃣ Binary (Base 2)
-
-* Uses digits: **0 and 1**
-* Each bit = power of 2
-* Example: `1011` = 1×8 + 0×4 + 1×2 + 1×1 = 11 decimal
-
----
-
-## 2️⃣ Octal (Base 8)
-
-* Uses digits: **0 to 7**
-* Each digit = power of 8
-* Example: `17` in octal = 1×8 + 7×1 = 15 decimal
-
----
-
-## 3️⃣ Hexadecimal (Base 16)
-
-* Uses digits: **0 to 9** and letters **A to F** (A=10, B=11, ..., F=15)
-* Each digit = power of 16
-* Example: `1A` in hex = 1×16 + 10×1 = 26 decimal
-
----
-
-## 🔢 Tables for 0–20 Decimal in Binary, Octal & Hex
+🔢 Tables for 0–20 Decimal in Binary, Octal & Hex
 
 | Decimal | Binary | Octal | Hex |
 | ------- | ------ | ----- | --- |
@@ -92,27 +61,11 @@ Used by all computers internally
 | 19      | 10011  | 23    | 13  |
 | 20      | 10100  | 24    | 14  |
 
----
-
-## 🧮 How to Convert Numbers
-
-### Binary → Decimal
-
-Add powers of 2 where bits are 1.
-
-### Octal → Decimal
-
-Add powers of 8 times each digit.
-
-### Hex → Decimal
-
-Add powers of 16 times each digit (digits A-F count as 10-15).
 
 
 
-## 💡 Python Examples
+💡 Python Examples
 
-```python
 # Convert decimal to binary, octal, hex
 num = 20
 print(bin(num))  # 0b10100 (binary)
