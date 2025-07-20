@@ -1,7 +1,7 @@
  🧮 Python Bitwise vs Logical Operators – Full Lesson
 
 
-## 🔹 PART 1: LOGICAL OPERATORS (Work on Booleans: `True`, `False`)
+🔹 PART 1: LOGICAL OPERATORS (Work on Booleans: `True`, `False`)
 
 | Operator | Name        | Example          | Result  |
 | -------- | ----------- | ---------------- | ------- |
@@ -9,7 +9,9 @@
 | `or`     | Logical OR  | `True or False`  | `True`  |
 | `not`    | Logical NOT | `not True`       | `False` |
 
-### ✅ Truth Table for Logical Operators
+
+
+✅ Truth Table for Logical Operators
 
 | A     | B     | A and B | A or B | not A |
 | ----- | ----- | ------- | ------ | ----- |
@@ -18,66 +20,70 @@
 | False | True  | False   | True   | True  |
 | False | False | False   | False  | True  |
 
----
 
-### 🔍 Examples:
 
-```python
+🔍 Examples:
+
 a = True
 b = False
 
 print(a and b)  # False
 print(a or b)   # True
 print(not a)    # False
-```
 
----
 
-## 🔹 PART 2: BITWISE OPERATORS (Work on integers – bit by bit)
 
-| Operator    | Symbol | Example  | Meaning                        |     |            |
-| ----------- | ------ | -------- | ------------------------------ | --- | ---------- |
-| AND         | `&`    | `5 & 3`  | Bitwise AND                    |     |            |
-| OR          | \`     | \`       | \`5                            | 3\` | Bitwise OR |
-| XOR         | `^`    | `5 ^ 3`  | Bitwise exclusive OR           |     |            |
-| NOT         | `~`    | `~5`     | Bitwise NOT (inverts all bits) |     |            |
-| Shift Left  | `<<`   | `5 << 1` | Shifts bits to the left        |     |            |
-| Shift Right | `>>`   | `5 >> 1` | Shifts bits to the right       |     |            |
 
----
+🔹 PART 2: BITWISE OPERATORS (Work on integers – bit by bit)
 
-### ✅ Binary Chart
+| Operator    | Symbol | Example  | Meaning                        |
+| ----------- | ------ | -------- | ------------------------------ |
+| AND         |   &    | 5 & 3    | Bitwise AND                    |
+| OR          |   |    | 5 | 3    | Bitwise OR                     |
+| XOR         |  ^     | 5 ^ 3    | Bitwise exclusive OR           |
+| NOT         |  ~     |  ~5      | Bitwise NOT (inverts all bits) |
+| Shift Left  |  <<    | 5 << 1   | Shifts bits to the left        |
+| Shift Right |  >>    | 5 >> 1   | Shifts bits to the right       |
+
+
+
+✅ Binary Chart
 
 | Decimal | Binary |
 | ------- | ------ |
 | 5       | 0101   |
 | 3       | 0011   |
 
-### ⚙️ Examples
+⚙️ Examples
 
-#### `&` AND
+&   AND
 
-```python
-print(5 & 3)  # 0101 & 0011 = 0001 => 1
-```
+print(5 & 3)  
+0101 & 0011    0001 => 1
 
-#### `|` OR
+## COMPARISON EXAMPLE 
+  0101 ( compare with below )
+  0011 ( compare with above )
+---------------
+  0001 => 1
 
-```python
+
+
+
+ |  OR
+
 print(5 | 3)  # 0101 | 0011 = 0111 => 7
-```
+
 
 #### `^` XOR
 
-```python
 print(5 ^ 3)  # 0101 ^ 0011 = 0110 => 6
-```
+
 
 #### `~` NOT (bitwise complement)
 
-```python
 print(~5)     # ~00000101 = 11111010 (in 2's complement: -6)
-```
+
 
 #### `<<` Left Shift
 
