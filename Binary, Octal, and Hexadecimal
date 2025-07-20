@@ -1,0 +1,198 @@
+
+
+
+
+
+✅ **Full Lesson: Binary Numbers (1–20) – How to Read, Convert, and Memorize**
+
+
+
+## 🔢 What Is Binary?
+
+* Binary = **Base-2** number system
+* Only uses **0 and 1**
+* Used by all computers internally
+
+---
+
+## 📊 Binary Table: Decimal 1 to 20
+
+| Decimal | Binary |
+| ------- | ------ |
+| 1       | 0001   |
+| 2       | 0010   |
+| 3       | 0011   |
+| 4       | 0100   |
+| 5       | 0101   |
+| 6       | 0110   |
+| 7       | 0111   |
+| 8       | 1000   |
+| 9       | 1001   |
+| 10      | 1010   |
+| 11      | 1011   |
+| 12      | 1100   |
+| 13      | 1101   |
+| 14      | 1110   |
+| 15      | 1111   |
+| 16      | 10000  |
+| 17      | 10001  |
+| 18      | 10010  |
+| 19      | 10011  |
+| 20      | 10100  |
+
+---
+
+## ⚙️ How Binary Works (Power of 2 Positions)
+
+From **right to left**, each digit represents:
+
+| Bit Position | Power of 2 | Value |
+| ------------ | ---------- | ----- |
+| Rightmost    | 2⁰         | 1     |
+|              | 2¹         | 2     |
+|              | 2²         | 4     |
+|              | 2³         | 8     |
+| Leftmost     | 2⁴         | 16    |
+
+---
+
+### 🧠 Example: Convert 13 to Binary
+
+* 13 = 8 + 4 + 1
+* Powers used: `2³ + 2² + 2⁰`
+* Binary: `1101`
+
+### 🧠 Example: Convert Binary `1010` to Decimal
+
+* `1010` = `1×8 + 0×4 + 1×2 + 0×1` = **10**
+
+---
+
+## 🎯 Shortcut to Memorize
+
+1. Practice powers of 2:
+   `1, 2, 4, 8, 16, 32, 64...`
+
+2. Use finger trick: Each finger = 1 bit
+
+   * From pinky to thumb: `1, 2, 4, 8, 16`
+
+3. Count 0–15 in binary on fingers (4-bit max)
+
+
+
+## 🧪 Python Trick to See Binary
+
+
+for i in range(1, 21):
+    print(f"{i:2} = {i:05b}")
+
+
+# Output:
+ 1 = 00001
+ 2 = 00010
+
+20 = 10100
+
+
+
+
+
+
+✅ **Full Lesson: Number Systems — Binary, Octal, and Hexadecimal**
+
+---
+
+## 1️⃣ Binary (Base 2)
+
+* Uses digits: **0 and 1**
+* Each bit = power of 2
+* Example: `1011` = 1×8 + 0×4 + 1×2 + 1×1 = 11 decimal
+
+---
+
+## 2️⃣ Octal (Base 8)
+
+* Uses digits: **0 to 7**
+* Each digit = power of 8
+* Example: `17` in octal = 1×8 + 7×1 = 15 decimal
+
+---
+
+## 3️⃣ Hexadecimal (Base 16)
+
+* Uses digits: **0 to 9** and letters **A to F** (A=10, B=11, ..., F=15)
+* Each digit = power of 16
+* Example: `1A` in hex = 1×16 + 10×1 = 26 decimal
+
+---
+
+## 🔢 Tables for 0–20 Decimal in Binary, Octal & Hex
+
+| Decimal | Binary | Octal | Hex |
+| ------- | ------ | ----- | --- |
+| 0       | 0000   | 0     | 0   |
+| 1       | 0001   | 1     | 1   |
+| 2       | 0010   | 2     | 2   |
+| 3       | 0011   | 3     | 3   |
+| 4       | 0100   | 4     | 4   |
+| 5       | 0101   | 5     | 5   |
+| 6       | 0110   | 6     | 6   |
+| 7       | 0111   | 7     | 7   |
+| 8       | 1000   | 10    | 8   |
+| 9       | 1001   | 11    | 9   |
+| 10      | 1010   | 12    | A   |
+| 11      | 1011   | 13    | B   |
+| 12      | 1100   | 14    | C   |
+| 13      | 1101   | 15    | D   |
+| 14      | 1110   | 16    | E   |
+| 15      | 1111   | 17    | F   |
+| 16      | 10000  | 20    | 10  |
+| 17      | 10001  | 21    | 11  |
+| 18      | 10010  | 22    | 12  |
+| 19      | 10011  | 23    | 13  |
+| 20      | 10100  | 24    | 14  |
+
+---
+
+## 🧮 How to Convert Numbers
+
+### Binary → Decimal
+
+Add powers of 2 where bits are 1.
+
+### Octal → Decimal
+
+Add powers of 8 times each digit.
+
+### Hex → Decimal
+
+Add powers of 16 times each digit (digits A-F count as 10-15).
+
+
+
+## 💡 Python Examples
+
+```python
+# Convert decimal to binary, octal, hex
+num = 20
+print(bin(num))  # 0b10100 (binary)
+print(oct(num))  # 0o24 (octal)
+print(hex(num))  # 0x14 (hexadecimal)
+
+# Convert back
+print(int('10100', 2))  # 20 from binary
+print(int('24', 8))     # 20 from octal
+print(int('14', 16))    # 20 from hex
+
+
+
+
+## 🔄 Summary
+
+| Number System | Base | Digits Used      | Power Positions     |
+| ------------- | ---- | ---------------- | ------------------- |
+| Binary        | 2    | 0,1              | 1, 2, 4, 8, 16...   |
+| Octal         | 8    | 0–7              | 1, 8, 64, 512...    |
+| Hexadecimal   | 16   | 0–9, A(10)–F(15) | 1, 16, 256, 4096... |
+
