@@ -222,5 +222,241 @@ lst = [1, 2, 3, 4]
 i = lst[1] - lst[0]  # 2 - 1 = 1
 del lst[i]
 print(lst)
+
+
+
+
+
+-------------------------------------------------------------
+
+
+
+ 20 tricky Python list challenges
+
+* `insert()`, `del`, `pop()`
+* dynamic list changes during loops
+* indexing and slicing
+
+---
+
+### ✅ Format: Code snippet + What is the output?
+
+---
+
+#### 🔢 1.
+
+```python
+lst = [0]
+for i in range(3):
+    lst.insert(0, i)
+print(lst)
 ```
+
+---
+
+#### 🔢 2.
+
+```python
+lst = [1, 2, 3]
+for i in range(len(lst)):
+    lst.pop()
+print(lst)
+```
+
+---
+
+#### 🔢 3.
+
+```python
+lst = [1]
+for i in range(3):
+    lst.append(lst[i])
+print(lst)
+```
+
+---
+
+#### 🔢 4.
+
+```python
+lst = [0]
+for i in range(3):
+    lst.insert(-1, i)
+print(lst)
+```
+
+---
+
+#### 🔢 5.
+
+```python
+lst = [1, 2]
+for i in range(2):
+    lst.append(lst[i] + lst[-1])
+print(lst)
+```
+
+---
+
+#### 🔢 6.
+
+```python
+lst = [5, 4, 3, 2, 1]
+for i in range(3):
+    del lst[i]
+print(lst)
+```
+
+---
+
+#### 🔢 7.
+
+```python
+lst = [1, 2, 3, 4]
+for i in range(len(lst)):
+    lst[i] = lst[i] * 2
+print(lst)
+```
+
+---
+
+#### 🔢 8.
+
+```python
+lst = [0, 1, 2, 3]
+for i in lst:
+    lst.remove(i)
+print(lst)
+```
+
+---
+
+#### 🔢 9.
+
+```python
+lst = [0]
+for i in range(5):
+    lst += [lst[-1] + 1]
+print(lst)
+```
+
+---
+
+#### 🔢 10.
+
+```python
+lst = [1, 2, 3]
+for i in range(len(lst)):
+    lst.insert(i, 0)
+print(lst)
+```
+
+---
+
+#### 🔢 11.
+
+```python
+lst = []
+for i in range(3):
+    lst.insert(0, i)
+print(lst)
+```
+
+---
+
+#### 🔢 12.
+
+```python
+lst = [1, 2, 3]
+lst2 = lst
+lst2[0] = 0
+print(lst)
+```
+
+---
+
+#### 🔢 13.
+
+```python
+lst = [1, 2, 3, 4]
+for i in range(len(lst)):
+    print(lst[i])
+    lst.pop(0)
+```
+
+---
+
+#### 🔢 14.
+
+```python
+lst = [1, 2, 3]
+for i in range(len(lst)):
+    lst.append(lst[i])
+print(lst)
+```
+
+---
+
+#### 🔢 15.
+
+```python
+lst = [0, 1, 2, 3]
+for i in range(4):
+    lst.insert(i, 9)
+print(lst)
+```
+
+---
+
+#### 🔢 16.
+
+```python
+lst = [1, 2]
+for i in range(2):
+    lst.insert(-1, lst[-1])
+print(lst)
+```
+
+---
+
+#### 🔢 17.
+
+```python
+lst = [5]
+for i in range(3):
+    lst = lst + [i]
+print(lst)
+```
+
+---
+
+#### 🔢 18.
+
+```python
+lst = [1, 2]
+for i in range(2):
+    lst[i] = lst[-1]
+print(lst)
+```
+
+---
+
+#### 🔢 19.
+
+```python
+lst = [1, 2, 3]
+lst = lst[:1] + lst[2:]
+print(lst)
+```
+
+---
+
+#### 🔢 20.
+
+```python
+lst = [1, 2]
+for i in range(2):
+    lst.append(lst[-(i + 1)])
+print(lst)
+
 
