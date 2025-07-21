@@ -2,6 +2,136 @@ https://www.geeksforgeeks.org/python/python-using-2d-arrays-lists-the-right-way/
 
 
 
+
+
+
+
+Exam Questoin and explaantion
+
+
+
+
+### 🔍 Full Lesson: How Many `#` Will Be Printed?
+
+---
+
+## ✅ Code:
+
+```python
+lst = [[x for x in range(3)] for y in range(3)]
+
+for r in range(3):
+    for c in range(3):
+        if lst[r][c] % 2 != 0:
+            print("#")
+```
+
+---
+
+## 🎯 Step 1: Understand the List Creation
+
+### Line:
+
+```python
+lst = [[x for x in range(3)] for y in range(3)]
+```
+
+### 📦 Breakdown:
+
+* `range(3)` gives: `0, 1, 2`
+* Inner list: `[x for x in range(3)]` → `[0, 1, 2]`
+* This inner list is created **3 times** (for `y in range(3)`)
+
+### 🧾 Final structure of `lst`:
+
+```python
+lst = [
+    [0, 1, 2],
+    [0, 1, 2],
+    [0, 1, 2]
+]
+```
+
+---
+
+## 🎯 Step 2: Understand the Loops
+
+### Loops:
+
+```python
+for r in range(3):        # outer loop: r = 0, 1, 2
+    for c in range(3):    # inner loop: c = 0, 1, 2
+```
+
+This means **total iterations = 3 × 3 = 9**
+
+---
+
+## 🎯 Step 3: Understand the Condition
+
+### Line:
+
+```python
+if lst[r][c] % 2 != 0:
+    print("#")
+```
+
+We only print `#` **if the element is odd**.
+
+---
+
+## 🔍 Analyze Each Element:
+
+| Row | Column | Value | Value % 2 != 0 | Print `#`? |
+| --- | ------ | ----- | -------------- | ---------- |
+| 0   | 0      | `0`   | No             | ❌          |
+| 0   | 1      | `1`   | Yes            | ✅          |
+| 0   | 2      | `2`   | No             | ❌          |
+| 1   | 0      | `0`   | No             | ❌          |
+| 1   | 1      | `1`   | Yes            | ✅          |
+| 1   | 2      | `2`   | No             | ❌          |
+| 2   | 0      | `0`   | No             | ❌          |
+| 2   | 1      | `1`   | Yes            | ✅          |
+| 2   | 2      | `2`   | No             | ❌          |
+
+✅ `#` printed when value is `1`, which appears **3 times**.
+
+---
+
+## ✅ Final Answer:
+
+```
+3
+```
+
+### 📤 Output:
+
+#
+#
+#
+
+
+
+## 🧠 Concept Recap:
+
+| Concept              | Meaning                                          |
+| -------------------- | ------------------------------------------------ |
+| List Comprehension   | Builds the 2D list `[[0,1,2], [0,1,2], [0,1,2]]` |
+| Nested Loops         | Goes through every row and column                |
+| Condition `% 2 != 0` | Checks if the number is **odd**                  |
+| Counting `#`         | Count how many **odd numbers** appear            |
+
+
+
+
+
+
+
+
+
+
+
+
 ### **📚 Python 2D Lists: Comprehensive Lesson Notes**  
 
 #### **🔹 1. What is a 2D List?**  
