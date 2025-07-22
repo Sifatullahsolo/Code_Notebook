@@ -110,3 +110,14 @@ After insert:
 | 2         | \[1, 1, 1, 2, 3]   | 1                             | \[1, 1, 1, 1, 2, 3] |
 
 
+
+
+
+
+
+
+
+a = [1, 2, 3, 4, 5]
+b = [x for x in a if x > 3]
+c = [x for x in b if x > 4]
+print(len(a) + len(b) + len(c))
