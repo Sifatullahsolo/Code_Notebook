@@ -200,6 +200,15 @@ ValueError:  int("five")
 
 
 
+a = 10
+b = "5"
+print(a / b)  # ❌ TypeError
+
+
+
+
+
+
 
 
 add "Mango" priced at $2.99 to the fruit_prices dictionary?
@@ -373,9 +382,30 @@ print(y ** (1 / x))
 
 
 
+# Lesson: Counting how many '#' will print based on odd numbers in a nested list
 
+lst = [[x for x in range(3)] for y in range(3)]
+# lst is a 3x3 matrix:
+# [
+#  [0, 1, 2],
+#  [0, 1, 2],
+#  [0, 1, 2]
+# ]
 
+count = 0
+for r in range(3):        # rows 0 to 2
+    for c in range(3):    # columns 0 to 2
+        if lst[r][c] % 2 != 0:  # check if value is odd
+            print("#")
+            count += 1
 
+# Total odd numbers (1 in each row) = 3
+print("Total '#' printed:", count)
+# Output:
+# #
+# #
+# #
+# Total '#' printed: 3
 
 
 
@@ -392,9 +422,16 @@ print(y ** (1 / x))
 
 
 
+d = {'a': 1, 'b': 2}
 
+for k in d.keys():
+    print(k)  # keys
 
+for v in d.values():
+    print(v)  # values
 
+for k, v in d.items():
+    print(k, v)  # keys and values
 
 
 
@@ -404,9 +441,20 @@ print(y ** (1 / x))
 
 
 
+# List: access by index (integer)
+lst = ['a', 'b', 'c']
+print(lst[0])  # 'a'
 
+# Dict: access by key (not index)
+d = {'one': 1, 'two': 2}
+print(d['one'])  # 1
 
+# KeyError if key missing
+# print(d[0])  # Error
 
+# Use get() to avoid error
+print(d.get('one'))  # 1
+print(d.get(0))      # None
 
 
 
@@ -417,6 +465,17 @@ print(y ** (1 / x))
 
 
 
+PYTHON KEYWORD
+| Category                | Keywords                                                          |
+| ----------------------- | ----------------------------------------------------------------- |
+| **Control Flow**        | `if`, `else`, `elif`, `for`, `while`, `break`, `continue`, `pass` |
+| **Boolean / Logic**     | `True`, `False`, `and`, `or`, `not`, `is`, `in`                   |
+| **Functions & Classes** | `def`, `return`, `lambda`, `yield`, `class`                       |
+| **Exception Handling**  | `try`, `except`, `finally`, `raise`, `assert`                     |
+| **Modules & Imports**   | `import`, `from`, `as`, `global`, `nonlocal`                      |
+| **Object Management**   | `del`, `with`                                                     |
+| **Data & Structure**    | `None`                                                            |
+| **Async Programming**   | `async`, `await`                                                  |
 
 
 
@@ -424,9 +483,19 @@ print(y ** (1 / x))
 
 
 
+# Build dictionary from list with one-item tuples and print the first element of each tuple
 
+dictionary = {}
+my_list = ['a', 'b', 'c', 'd']
 
+# Create dictionary keys from list except last item, values are one-item tuples
+for i in range(len(my_list) - 1):
+    dictionary[my_list[i]] = (my_list[i], )
 
+# Loop over sorted keys and print the first element of each tuple value
+for i in sorted(dictionary.keys()):
+    k = dictionary[i]
+    print(k[0])  # prints 'a', 'b', 'c'
 
 
 
@@ -439,6 +508,11 @@ print(y ** (1 / x))
 
 
 
+# Slice in tuple is ok 
+tup = (1, 2, 4, 8)
+tup = tup[1:-1]
+tup = tup[0]
+print(tup)
 
 
 
@@ -446,7 +520,13 @@ print(y ** (1 / x))
 
 
 
+def fun(x):
+    if x % 2 == 0:
+        return 1
+    else:
+        return
 
+print(fun(fun(2)) + 1)
 
 
 
@@ -454,8 +534,15 @@ print(y ** (1 / x))
 
 
 
+def any():
+    print(var + 1, end='')
 
+var = 1
+any()
+print(var)  # output 21
 
+2 from inside the function
+1 from the global variable printed outside the function
 
 
 
@@ -466,7 +553,13 @@ print(y ** (1 / x))
 
 
 
+def fun(x):
+    x += 1
+    return x
 
+x = 2
+x = fun(x + 1)
+print(x)   # output 4
 
 
 
@@ -476,8 +569,13 @@ print(y ** (1 / x))
 
 
 
+def func_1(a):
+    return a ** a
 
+def func_2(a):
+    return func_1(a) * func_1(a)
 
+print(func_2(2))  # 16
 
 
 
@@ -488,9 +586,15 @@ print(y ** (1 / x))
 
 
 
+dictionary = {'one': 'two', 'three': 'one', 'two': 'three'}
 
+for key, value in dictionary.items():
+    print(key + " + " + value)
 
 
+# one + two
+three + one
+two + three
 
 
 
@@ -502,9 +606,96 @@ print(y ** (1 / x))
 
 
 
+def f(x):
+    if x == 0:
+        return 0         
+    return x + f(x - 1)  # Recursive call: add current x to sum of smaller numbers
 
+print(f(4))              # Output: 10
 
 
+
+
+
+
+
+You Can’t Use Reserved Keywords as Function Parameters
+
+
+
+
+def greet(name):
+    print("Hello", name)
+
+greet("Sara")
+print(name)  # ❌ ERROR!
+
+
+
+
+
+
+
+
+
+
+pop([i]) → Removes and returns item
+count(x) → Counts occurrences
+
+
+
+
+
+
+
+d = {"a":1, "b":2}
+print(d.get("a", 0))      # 1
+print(list(d.items()))    # [('a',1), ('b',2)]
+print(list(d.keys()))     # ['a', 'b']
+print(list(d.values()))   # [1, 2]
+
+d.update({"c":3})         
+print(d)                 # {'a':1, 'b':2, 'c':3}
+
+d.pop("b")               
+print(d)                 # {'a':1, 'c':3}
+
+d.popitem()              
+print(d)                 # {'a':1}
+
+d.clear()                
+print(d)                 # {}
+
+
+
+
+
+
+
+
+
+
+
+my_dict = {"A": 1, "B": 2}
+
+# Access value
+val = my_dict["A"]          # 1
+
+# Add / Modify entry
+my_dict["C"] = 3            # {'A':1, 'B':2, 'C':3}
+
+# Delete entry
+del my_dict["B"]            # {'A':1, 'C':3}
+
+# Dictionary comprehension (square numbers 0 to 4)
+squared = {x: x**2 for x in range(5)}  
+# {0:0, 1:1, 2:4, 3:9, 4:16}
+
+
+
+
+packing unpacking tuple:
+a, b, c = my_tuple
 
 
 
