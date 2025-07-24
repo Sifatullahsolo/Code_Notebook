@@ -710,6 +710,9 @@ Orange = mango
 
 
 
+# AttributeError
+x = 10  
+x.append(2)  # Error: int has no attribute 'append'
 
 
 
@@ -718,24 +721,29 @@ Orange = mango
 
 
 
+if A = 16 and B = 15. A % B // A
 
 
 
 
 
+The // operator in Python is the truncation division operator
 
 
 
 
+What is the output of print (0.1 + 0.2 == 0.3)?
 
 
 
 
 
+What is the return value of trunc()?   # integer
 
 
 
 
+Keys are used to access corresponding values in a dictionary.
 
 
 
@@ -744,9 +752,16 @@ Orange = mango
 
 
 
+# ✅ LESSON: Hashable vs Unhashable (Easy Example)
 
+# ✅ These can go in a set (they cannot be changed)
+good_set = {1, "hi", (2, 3)}  # int, str, tuple → OK
 
+# ❌ These cannot go in a set (they can be changed)
+# bad_set = {[1, 2], {"a": 1}}  # list and dict → ❌ TypeError
 
+# ✅ Fix: Make them unchangeable
+fixed_set = {tuple([1, 2]), frozenset([3, 4])}  # now OK
 
 
 
@@ -758,10 +773,20 @@ Orange = mango
 
 
 
+# ✅ LESSON: zip() in Python (Beginner-Friendly)
 
+# zip() joins items from two or more lists pair by pair
 
+names = ["Ali", "Zara", "Omar"]
+ages = [25, 30, 22]
 
+# zip them together
+zipped = zip(names, ages)
+print(list(zipped))  # [('Ali', 25), ('Zara', 30), ('Omar', 22)]
 
+# You can use it in a loop too
+for name, age in zip(names, ages):
+    print(name, "is", age, "years old")
 
 
 
@@ -773,7 +798,10 @@ Orange = mango
 
 
 
+a = frozenset([1, 2, 3])
+# a.add(4)  # ❌ Error: can't change frozenset
 
+print(a)  # Output: frozenset({1, 2, 3})
 
 
 
@@ -784,6 +812,7 @@ Orange = mango
 
 
 
+The "-" operator cannot be used with strings in Python. It is not a valid arithmetic operation for string manipulation.
 
 
 
@@ -794,6 +823,8 @@ Orange = mango
 
 
 
+To insert 5 to the third position in list1, we use
+list1.insert(2, 5)
 
 
 
@@ -802,6 +833,7 @@ Orange = mango
 
 
 
+Set makes use of key and  Dictionary makes use of key, key  value
 
 
 
@@ -811,6 +843,7 @@ Orange = mango
 
 
 
+If a=(1,2,3,4), a[1:-1] is (2,3)
 
 
 
@@ -828,14 +861,57 @@ Orange = mango
 
 
 
+# ✅ LESSON: Lists Inside Lists (2D Arrays) – Super Beginner Friendly
 
+# 🔸 1. A list can hold other lists
+matrix = [
+    [1, 2, 3],    # Row 0
+    [4, 5, 6],    # Row 1
+    [7, 8, 9]     # Row 2
+]
 
+# 🔹 2. Accessing values using two indexes
+print(matrix[0][0])  # Top-left → 1
+print(matrix[2][1])  # Row 2, Col 1 → 8
 
+# 🔹 3. Nested loop to read everything
+for row in matrix:
+    for item in row:
+        print(item, end=' ')
+# Output: 1 2 3 4 5 6 7 8 9
 
+# 🔹 4. Changing a value
+matrix[0][1] = 99
+print(matrix)  # [[1, 99, 3], [4, 5, 6], [7, 8, 9]]
 
+# 🔹 5. Creating a blank 3×3 grid using nested loops
+grid = []
+for i in range(3):
+    row = []
+    for j in range(3):
+        row.append(0)
+    grid.append(row)
+print(grid)  # [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
+# 🔹 6. Same grid using list comprehension
+grid = [[0 for j in range(3)] for i in range(3)]
 
+# 🔹 7. Real-world example: 31 days, 24 hours (temperature tracker)
+temps = [[0.0 for h in range(24)] for d in range(31)]
+print(temps[0][0])  # First day, midnight temp → 0.0
 
+# 🔹 8. Hotel: 3 buildings × 15 floors × 20 rooms
+hotel = [[[False for r in range(20)] for f in range(15)] for b in range(3)]
+
+# Book one room (building 2, floor 10, room 14)
+hotel[1][9][13] = True
+
+# Count available rooms on building 3, floor 15
+available = 0
+for room in hotel[2][14]:
+    if not room:
+        available += 1
+print("Available rooms:", available)
 
 
 
