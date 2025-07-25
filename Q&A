@@ -1048,9 +1048,16 @@ print(x)  # Output: 10 ✅
 
 
 
+# ✅ LESSON: Complex Numbers in Python (Imaginary Unit 'j')
 
+z = 1 + 2j  # complex number (real + imaginary parts)
 
+print(z.real)  # prints real part → 1.0
+print(z.imag)  # prints imaginary part → 2.0
 
+# Note:
+# - Use 'j' (not 'i') for imaginary part in Python
+# - Complex numbers = numbers with real and imaginary parts
 
 
 
@@ -1063,7 +1070,14 @@ print(x)  # Output: 10 ✅
 
 
 
+ round(number, digits)
 
+* Round a number to a specific decimal place.
+* Syntax: round(number, digits)
+### Example:
+round(3.75, 1)  # Keep 1 digit after decimal → 3.8
+round(3.75, 0)  # Keep 0 digits after decimal → 4.0
+round(3.75, 2)  # Keep 2 digits after decimal → 3.75
 
 
 
@@ -1076,8 +1090,15 @@ print(x)  # Output: 10 ✅
 
 
 
+# ✅ LESSON: Boolean Value of Strings in Python
 
+# Any non-empty string is True, even if it looks "false-like"
+print(bool("False"))  # True
+print(bool("0"))      # True
+print(bool("no"))     # True
 
+# Only an empty string is False
+print(bool(""))       # False
 
 
 
@@ -1089,7 +1110,10 @@ print(x)  # Output: 10 ✅
 
 
 
+numbers = [10, 20, 30, 40, 50]
 
+# This line copies value from index 4 to index 1:
+numbers[1] = numbers[4]
 
 
 
@@ -1103,15 +1127,54 @@ print(x)  # Output: 10 ✅
 
 
 
+# ✅ LESSON: Bitwise Operators with example values x=15 and y=16
 
+# Binary representation (8 bits for clarity):
+# x = 15 → 0000 1111
+# y = 16 → 0001 0000
 
+# Bitwise AND (&)
+# 0000 1111 (15)
+# 0001 0000 (16)
+# ------------
+# 0000 0000 = 0
+print("x & y =", 15 & 16)  # Output: 0
 
+# Bitwise OR (|)
+# 0000 1111 (15)
+# 0001 0000 (16)
+# ------------
+# 0001 1111 = 31
+print("x | y =", 15 | 16)  # Output: 31
 
+# Bitwise NOT (~) on x
+# ~15 inverts bits:
+# 0000 1111 → 1111 0000 (which is -16 in two's complement)
+print("~x =", ~15)          # Output: -16
 
+# Bitwise XOR (^)
+# 0000 1111 (15)
+# 0001 0000 (16)
+# ------------
+# 0001 1111 = 31
+print("x ^ y =", 15 ^ 16)  # Output: 31
 
+# Bitwise Right Shift (>>)
+# y >> 1:
+# 0001 0000 (16) → 0000 1000 (8)
+print("y >> 1 =", 16 >> 1)  # Output: 8
 
+# Bitwise Left Shift (<<)
+# y << 3:
+# 0001 0000 (16) → 1000 0000 (128)
+print("y << 3 =", 16 << 3)  # Output: 128
 
+# ---------------------------
+# Reminder: To compare bits easily,
+# write values like this:
 
+# x =  0000 1111 (15)
+# y =  0001 0000 (16)
 
 
 
@@ -1131,15 +1194,84 @@ print(x)  # Output: 10 ✅
 
 
 
+Full Table of Python Operators (with Precedence Order)
 
+# 📘 Operator Types:
+# Arithmetic, Comparison, Logical, Bitwise, Assignment, Identity, Membership
 
+# 🔢 1. Arithmetic Operators
+# -----------------------------------------
+# +   Addition           → a + b
+# -   Subtraction        → a - b
+# *   Multiplication     → a * b
+# /   Division           → a / b
+# //  Floor Division     → a // b
+# %   Modulus (remainder)→ a % b
+# **  Exponentiation     → a ** b
 
+# 🔍 2. Comparison Operators
+# -----------------------------------------
+# ==  Equal to           → a == b
+# !=  Not equal          → a != b
+# >   Greater than       → a > b
+# <   Less than          → a < b
+# >=  Greater or equal   → a >= b
+# <=  Less or equal      → a <= b
 
+# 🧠 3. Logical Operators
+# -----------------------------------------
+# and   Logical AND      → a and b
+# or    Logical OR       → a or b
+# not   Logical NOT      → not a
 
+# 🧮 4. Bitwise Operators (work on binary)
+# -----------------------------------------
+# &   Bitwise AND        → a & b
+# |   Bitwise OR         → a | b
+# ^   Bitwise XOR        → a ^ b
+# ~   Bitwise NOT        → ~a
+# <<  Left Shift         → a << 1
+# >>  Right Shift        → a >> 1
 
+# 📦 5. Assignment Operators
+# -----------------------------------------
+# =     Assign           → a = b
+# +=    Add and assign   → a += b
+# -=    Subtract and assign → a -= b
+# *=    Multiply and assign → a *= b
+# /=    Divide and assign → a /= b
+# //=   Floor divide assign → a //= b
+# %=    Modulus assign   → a %= b
+# **=   Exponent assign  → a **= b
+# &=, |=, ^=, <<=, >>=   Bitwise assignments
 
+# 🧬 6. Identity Operators
+# -----------------------------------------
+# is     Same identity   → a is b
+# is not Not same        → a is not b
 
+# 📚 7. Membership Operators
+# -----------------------------------------
+# in      Value found     → "a" in "abc"
+# not in  Value not found → "z" not in "abc"
 
+# 📊 8. Precedence (from Highest to Lowest)
+# -----------------------------------------
+# 1. ()          → Parentheses
+# 2. **          → Exponent
+# 3. +, -        → Unary plus/minus
+# 4. *, /, //, % → Multiplication / Division
+# 5. +, -        → Addition / Subtraction
+# 6. <<, >>      → Bitwise shift
+# 7. &           → Bitwise AND
+# 8. ^           → Bitwise XOR
+# 9. |           → Bitwise OR
+# 10. ==, !=, >, <, >=, <= → Comparisons
+# 11. not        → Logical NOT
+# 12. and        → Logical AND
+# 13. or         → Logical OR
+# 14. =, +=, etc → Assignment
+# 15. is, in     → Identity & Membership
 
 
 
@@ -1148,6 +1280,37 @@ print(x)  # Output: 10 ✅
 
 
 
+
+
+
+
+
+for i in range(6, 1, -2):
+    print(i, end=" ")  # Outputs: 6 4 2
+
+
+
+
+
+
+
+
+
+# ✅ LESSON: Any number raised to the power of 0 equals 1
+# This follows the exponent rules consistently
+
+print(5 ** 0)    # Output: 1
+print(100 ** 0)  # Output: 1
+print((-3) ** 0) # Output: 1
+
+
+
+✅ Any number multiplied by 0 equals 0
+# This is basic multiplication rule
+
+print(5 * 0)     # Output: 0
+print(100 * 0)   # Output: 0
+print(-3 * 0)    # Output: 0
 
 
 
