@@ -922,6 +922,57 @@ print("Available rooms:", available)
 
 
 
+# 🔸 4. Omitting start/end in slices
+my_list = [1, 2, 3, 4, 5]
+print(my_list[2:])    # [3, 4, 5]
+print(my_list[:2])    # [1, 2]
+print(my_list[-2:])   # [4, 5]
+
+# 🔸 5. Deleting slices
+my_list = [1, 2, 3, 4, 5]
+del my_list[0:2]
+print(my_list)  # [3, 4, 5]
+
+
+
+
+
+
+
+
+# Ex 2
+list_1 = ["A", "B", "C"]
+list_2 = list_1
+list_3 = list_2
+del list_1[0]
+del list_2
+print(list_3)  # ['B', 'C']
+
+
+
+
+
+
+
+
+
+
+
+# ✅ LESSON: List Slicing with Negative Index and Step
+
+my_list = [10, 8, 6, 4, 2]
+
+# 🔹 Slice with no step:
+new_list = my_list[-1:1]  # From index -1 (2) to index 1, but no step
+print(new_list)           # Output: [] (empty, because default step is +1 and -1<1)
+
+# 🔹 Slice with negative step:
+result = my_list[-1:1:-1]  # From index -1 (2) to index 1, step -1
+print(result)              # Output: [2, 4, 6]
+
+# 🔍 Summary:
+# - my_list[-1:1] → nothing, since it moves forward (default step = 1)
+# - my_list[-1:1:-1] → moves backward from index -1 to just after index 1
 
 
 
@@ -936,30 +987,55 @@ print("Available rooms:", available)
 
 
 
+my_list = [8, 10, 6, 2, 4]
+swapped = True  
+
+while swapped:
+    swapped = False                     
+
+    for i in range(len(my_list) - 1):
+        if my_list[i] > my_list[i + 1]:
+            # Swap neighbor elements if they are in wrong order
+            my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
+
+            swapped = True
 
 
+# ✅ LESSON: Why loops don't need `global` but functions do
 
+x = 5
 
+# 🔁 LOOP: No global needed
+for i in range(1):
+    x = 10  # Directly updates outer x
+print(x)  # Output: 10
 
+# 🧠 Reason: Loops use the same scope as outside
 
+# ----------------------------
 
+x = 5
 
+# 🧭 FUNCTION: Needs global
+def change():
+    x = 10  # Creates new local x (does NOT change outer x)
 
+change()
+print(x)  # Output: 5 ❌
 
+# ✅ Fix with global
+def change():
+    global x
+    x = 10  # Now changes outer x
 
+change()
+print(x)  # Output: 10 ✅
 
+# ----------------------------
 
-
-
-
-
-
-
-
-
-
-
-
+# 📦 Summary:
+# - Loops = Same scope → Can update variables directly
+# - Functions = New local scope → Need 'global' to change outer variables
 
 
 
