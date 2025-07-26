@@ -1409,6 +1409,25 @@ print(x , y)  # output 1 2
 
 
 
+and 
+
+
+system_ = "Udemy"
+def func():
+    global system_
+    system_ = "Python"
+ 
+func()
+print(system_) # Output Python 
+
+✅ Explanation:
+global system_ means: “Use the variable from outside.”
+
+So when system_ = "Python" runs inside the function, it changes the real variable.
+
+That’s why print shows "Python".
+
+
 
 
 
@@ -1475,6 +1494,12 @@ print(PII)
 
 
 
+What will be the result of the following print statement?
+
+weight_kg = [89, 67, 78, 115, 91]
+weight_kg.sort(reverse=True)
+print(weight_kg)
+# Output largest first
 
 
 
@@ -1488,6 +1513,12 @@ print(PII)
 
 
 
+# Lesson: List `extend()` and assignment
+
+twos = [2]                          # Create a list with one element: [2]
+twos_twice = twos.extend([22,2222]) # .extend() adds elements to 'twos' list, returns None
+print(twos_twice)                  # Prints None because .extend() does not return a new list
+print(twos)                        # Prints [2, 22, 2222] because list was modified in place
 
 
 
@@ -1501,6 +1532,30 @@ print(PII)
 
 
 
+string1 = "Python"
+string2 = "pYTHON"
+print(string1 == string2.capitalize())  # True
+
+
+
+
+
+
+
+
+
+
+
+
+# Lesson: You can use any name after ** (not just 'val')
+
+def demo(**anything):                   # The name can be anything: **kwargs, **data, **info, etc.
+    for key, value in anything.items():
+        print(f"{key} = {value}")
+
+demo(a=1, b=2)                          # Output:
+# a = 1
+# b = 2
 
 
 
@@ -1514,25 +1569,10 @@ print(PII)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("Udemy","Python")
+print("Udemy","Python",sep='')
+# Udemy Python
+UdemyPython
 
 
 
