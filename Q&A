@@ -1419,6 +1419,11 @@ print(x , y)  # output 1 2
 
 
 
+def sum(a,b):
+    return a - b
+    return a / b
+    return a + b
+print(sum(5,1))
 
 
 
@@ -1429,6 +1434,11 @@ print(x , y)  # output 1 2
 
 
 
+z = 7
+def func(z):
+    z = z - (z + 5)
+    return z
+print(func(func(func(z-3))))
 
 
 
@@ -1438,6 +1448,9 @@ print(x , y)  # output 1 2
 
 
 
+snakes = ("Python", "Anaconda", "Cobra")
+snake1, snake2, snake3 = snakes
+print(snake2)
 
 
 
@@ -1446,7 +1459,12 @@ print(x , y)  # output 1 2
 
 
 
-
+PII = {'fullname': "Robert Karamagi", 'age': 31, 'nationality': "Tanzanian"}
+ 
+while PII:
+    PII.popitem()
+print(PII)
+# Output {}
 
 
 
