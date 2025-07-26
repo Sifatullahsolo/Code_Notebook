@@ -1347,6 +1347,27 @@ Use: "".join(["1", "2", "3"]) ✅
 
 
 
+tup1 = (2,4)
+tup2 = ([2,4])
+tup1 = tup1+tup2
+print(tup1)
+# TypeError: can only concatenate tuple (not "list") to tuple
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dict = dict({1: 'Python', 2: 'Udemy'})
+print(Dict)
+# Creates a dictionary using dict().
 
 
 
@@ -1363,22 +1384,28 @@ Use: "".join(["1", "2", "3"]) ✅
 
 
 
+def func(x, y):
+    x = y;
+    y = x;
+x = "a"
+y = "b"
+ 
+func(x, y)
+print(x , y) # output a b 
 
 
 
+and
 
 
-
-
-
-
-
-
-
-
-
-
-
+def func(x, y):
+    x = y;
+    y = x;
+x = 1
+y = 2
+ 
+func(x, y)
+print(x , y)  # output 1 2
 
 
 
