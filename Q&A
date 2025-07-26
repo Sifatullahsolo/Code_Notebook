@@ -1318,6 +1318,15 @@ print(-3 * 0)    # Output: 0
 
 
 
+float("12.34.56")
+
+
+
+
+
+[1, 2, 3] + {"a": 1}
+You can store dict in a list → [{"a":1}] ✅
+But you can’t add list + dict → [1] + {"a":1} ❌
 
 
 
@@ -1325,9 +1334,9 @@ print(-3 * 0)    # Output: 0
 
 
 
-
-
-
+"".join([1, 2, 3])
+❌ TypeError — list has integers, not strings.
+Use: "".join(["1", "2", "3"]) ✅
 
 
 
