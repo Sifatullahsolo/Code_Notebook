@@ -1656,6 +1656,8 @@ fx()
 
 
 
+n a Python program, a control structure___________.
+# guides the sequence of statement execution within the program.
 
 
 
@@ -1666,9 +1668,20 @@ fx()
 
 
 
+# Define a function that collects many items
+def show_items(*items):
+    print("Items received:", items)  # items is a tuple
 
+# Prepare a list of fruits
+fruit1 = "apple"
+fruit2 = "banana"
+fruit3 = "mango"
 
+# Call the function with the fruits
+show_items(fruit1, fruit2, fruit3)
 
+# Output:
+# Items received: ('apple', 'banana', 'mango')
 
 
 
@@ -1682,6 +1695,11 @@ fx()
 
 
 
+tuple_1 = ("Guido")
+tuple_2 = ("van", "Rossum")
+tuple_3 = (tuple_1 + tuple_2)
+print(tuple_3)
+# TypeError: can only concatenate str (not "tuple") to str
 
 
 
@@ -1698,17 +1716,45 @@ fx()
 
 
 
+# 🎓 LESSON: Dictionary keys vs List indexes in Python
 
+# ✅ 1. LIST = uses INDEX numbers (starts from 0)
+my_list = ["apple", "banana", "cherry"]
 
+# Accessing list items by index (position)
+print(my_list[0])  # Output: apple (index 0)
+print(my_list[2])  # Output: cherry (index 2)
 
+# ----------------------------
 
+# ✅ 2. DICTIONARY = uses KEYS (not index)
+my_dict = {0: "red", 1: "green", 2: "blue"}
 
+# Accessing dictionary items by KEY (not position)
+print(my_dict[0])  # Output: red  (key is 0, not index)
+print(my_dict[2])  # Output: blue (key is 2, not position)
 
+# ----------------------------
 
+# ✅ 3. Nested Dictionary Example
+institutions = {
+    'inst1': {1: 'Dawasco'},
+    'inst2': {2: 'Tanesco'}
+}
 
+# Access 'inst2' dictionary → then use key 2 to get the value
+print(institutions['inst2'][2])  # Output: Tanesco
 
+# ⚠️ IMPORTANT:
+# [2] here is NOT an index!
+# It is a dictionary key → means: "look for the value where key = 2"
 
+# ----------------------------
 
+# 🧠 Summary:
+# - Lists: [number] → means index (position)
+# - Dicts: [key]    → means lookup by key name/value
+# - If the key is a number (like 0, 1, 2), it may look like an index — but it's not!
 
 
 
@@ -1724,6 +1770,14 @@ fx()
 
 
 
+m = 10
+def swipe():
+    global m
+    m += 10
+    print(10 + m)
+swipe()
+print(m)
+# Output 30 20 
 
 
 
@@ -1736,10 +1790,37 @@ fx()
 
 
 
+# 🎓 LESSON: Loop variable stays after loop
 
+for p in range(2):
+    print(p, end=" ")  # ➤ Prints 0 then 1
 
+# After loop ends, p still holds its last value (1)
+print(p, p - 1)        # ➤ Prints 1 and 0
 
+# ✅ Final Output:
+# 0 1 1 0
 
+# 🧠 Key Point:
+# ➤ Loop variable (p) is still available after the loop
+# ➤ It keeps the last value it had in the loop
+
+
+
+
+
+
+
+
+
+
+
+
+
+def func(x=9,y):
+    return x/y
+print(func(4))
+# SyntaxError: non-default argument follows default argument
 
 
 
