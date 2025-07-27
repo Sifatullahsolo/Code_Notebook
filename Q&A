@@ -1581,6 +1581,43 @@ UdemyPython
 
 
 
+a = []
+b = ""
+c = 0
+ 
+print(bool(a),bool(b),bool(c))
+# False False False
+
+
+
+
+
+
+
+
+
+u = 1
+v = 1
+print(u is not v)
+# False
+# Because same memory 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+round(3.14159,2)
+# 3.14159 si the number to be rounded,  and 2 is decimal to be rounded to 
+# result = 3.14
 
 
 
@@ -1596,31 +1633,17 @@ UdemyPython
 
 
 
+def fx():
+    print("fy")
+    def fy():
+        print("fz")
+        def fz():
+            print("fx")
+        fz()
+    fy()
+fx()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# We call fx() andn then all other funcs being called by its own self while func coming below.
 
 
 
