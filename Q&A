@@ -1,3 +1,54 @@
+
+# Left Shift Example
+bin1 = 0b1011       # binary for 11
+bin2 = bin1 << 2    # shift left by 2 → add two zeros at the end
+
+print(bin(bin2))    # Output: 0b101100 → binary for 44
+python
+Copy
+Edit
+# Right Shift Example
+bin1 = 0b1011       # binary for 11
+bin2 = bin1 >> 2    # shift right by 2 → remove two digits from right
+
+print(bin(bin2))    # Output: 0b10 → binary for 2
+
+
+
+
+
+
+
+
+
+
+
+
+~a = bitwise NOT
+
+Short Explanation:
+It flips all bits of a — like turning 1 to 0 and 0 to 1.
+Easy trick:
+
+python
+Copy
+Edit
+~a = -(a + 1)
+✅ Example: ~2 = -(2+1) = -3
+
+2 >  -3
+-5 > 6
+
+
+
+
+
+
+
+
+
+
+
 Accessing a value in a dictionary using its key
 
 my_dict = {"name": "Alice", "age": 25}
@@ -1836,6 +1887,11 @@ print(func(4))
 
 
 
+for c in range(1, 3):
+    print(c)
+    break
+else:
+    print("PCEP")​  # Output 1
 
 
 
@@ -1848,13 +1904,27 @@ print(func(4))
 
 
 
+### 🧠 Very Short Python Lesson: **Recursive Factorial
 
+def factorial(number):            # Define a function called factorial that takes 'number'
+    if number == 1:               # Base case: if number is 1, return 1 (end recursion)
+        return 1
+    return factorial(number-1)*number  # Recursive call: factorial(n-1) * n
 
+print(factorial(3))  # Output: 6
 
 
+### 📚 Step-by-Step Breakdown:
 
+| Step         | What Happens                |
+| ------------ | --------------------------- |
+| factorial(3) | Calls factorial(2) \* 3     |
+| factorial(2) | Calls factorial(1) \* 2     |
+| factorial(1) | Returns 1 (base case)       |
+| Then:        | 1 \* 2 = 2 → 2 \* 3 = **6** |
 
 
+This is **recursion** — a function calling itself until it reaches a base case.
 
 
 
@@ -1866,8 +1936,18 @@ print(func(4))
 
 
 
+creators = {"Python":"Guido van Rossum","R":"Ross Ihaka","R":"Robert Gentleman"}
+ 
+for creator in creators.items():
+    print(creator)
 
+However, there's a slight inconsistency: it assigns two values for the key "R". 
+In Python dictionaries, 
+the most recent value overwrites any previous values for the same key.
 
+# output 
+('Python', 'Guido van Rossum')
+('R', 'Robert Gentleman')
 
 
 
@@ -1882,7 +1962,13 @@ print(func(4))
 
 
 
+libraries = ["Matplotlib","Pandas","TensorFlow","Scikit-learn"]
+libraries_edit = libraries
+libraries_edit.remove("Pandas")
+print(libraries)
 
+#Output ['Matplotlib', 'TensorFlow', 'Scikit-learn']
+✅ by default print() shows strings in single quotes (') when printing lists or repr() style
 
 
 
@@ -1894,7 +1980,16 @@ print(func(4))
 
 
 
+x = 1
+if x % 2 = 0:
+    elif x < 0:
+        print("Python v1")
+    elif x > 0:
+        print("Python v1")
+    else:
+        print("Python v3")
 
+# SyntaxError: invalid syntax
 
 
 
@@ -1908,6 +2003,10 @@ print(func(4))
 
 
 
+if 5==5.0:
+    print("Equal")
+else:
+    print("Not Equal")  # Equal
 
 
 
@@ -1921,6 +2020,10 @@ print(func(4))
 
 
 
+u = 0
+while u < 15:
+    u+=4
+print(u)  # 16
 
 
 
@@ -1931,7 +2034,12 @@ print(func(4))
 
 
 
+instructor = ["Robert","Method","Karamagi", ""]
+instructor.remove("Method")
+print(instructor)
 
+why output is : ['Robert', 'Method', 'Karamagi', '']
+Because '' is an element in the list — Python shows all elements, including empty strings, separated by commas.
 
 
 
@@ -1944,6 +2052,11 @@ print(func(4))
 
 
 
+print("The quieter you become, the more you are able to hear.")
+print(""'The quieter you become, the more you are able to hear.'"")
+# Output 
+The quieter you become, the more you are able to hear.
+The quieter you become, the more you are able to hear.
 
 
 
@@ -1953,7 +2066,11 @@ print(func(4))
 
 
 
+dictionary = {'Country': 'Tanzania', 'Capital City': 'Dodoma'}
+print(dictionary)
 
+# Output
+{'Country': 'Tanzania', 'Capital City': 'Dodoma'}
 
 
 
@@ -1968,9 +2085,10 @@ print(func(4))
 
 
 
-
-
-
+high_level = ("Python", "C++", "Java", "C#", "PHP", "Ruby", "Perl")
+print(high_level[-5:-2])
+#Output
+('Java', 'C#', 'PHP')
 
 
 
