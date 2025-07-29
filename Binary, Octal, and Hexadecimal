@@ -64,6 +64,53 @@ Used by all computers internally
 
 
 
+ how to count from **0 to 50 in hexadecimal (base-16)**, with decimal equivalents for reference:
+
+| **Decimal** | **Hexadecimal** |
+|------------|----------------|
+| 0          | `0x0`          |
+| 1          | `0x1`          |
+| 2          | `0x2`          |
+| 3          | `0x3`          |
+| 4          | `0x4`          |
+| 5          | `0x5`          |
+| 6          | `0x6`          |
+| 7          | `0x7`          |
+| 8          | `0x8`          |
+| 9          | `0x9`          |
+| 10         | `0xA`          |
+| 11         | `0xB`          |
+| 12         | `0xC`          |
+| 13         | `0xD`          |
+| 14         | `0xE`          |
+| 15         | `0xF`          |
+| 16         | `0x10`         |
+| 17         | `0x11`         |
+| ...        | ...            |
+| 31         | `0x1F`         |
+| 32         | `0x20`         |
+| ...        | ...            |
+| 47         | `0x2F`         |
+| 48         | `0x30`         |
+| 49         | `0x31`         |
+| 50         | `0x32`         |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 💡 Python Examples
 
 # Convert decimal to binary, octal, hex
