@@ -563,7 +563,7 @@ for i in sorted(dictionary.keys()):
 tup = (1, 2, 4, 8)
 tup = tup[1:-1]
 tup = tup[0]
-print(tup)
+print(tup)  # 2
 
 
 
@@ -691,6 +691,8 @@ print(name)  # ❌ ERROR!
 
 
 pop([i]) → Removes and returns item
+
+
 count(x) → Counts occurrences
 
 
@@ -783,13 +785,68 @@ The // operator in Python is the truncation division operator
 
 
 
-What is the output of print (0.1 + 0.2 == 0.3)?
+What is the output of print (0.1 + 0.2 == 0.3)?        # False
 
 
 
 
 
 What is the return value of trunc()?   # integer
+math.trunc(x)
+x: A numeric value (integer or float).
+
+Returns: The integer part of x (as an integer if possible, otherwise a float).
+
+Example:
+print(math.trunc(3.7))   # Output: 3
+print(math.trunc(-2.3))  # Output: -2
+print(math.trunc(5.0))   # Output: 5
+Key Points:
+Same as int() for positive numbers, but differs for negative numbers:
+
+math.trunc(-2.3) returns -2 (truncates toward zero).
+
+int(-2.3) also returns -2 (same behavior in Python).
+
+However, in some languages, int() rounds down (floor), but Python’s int() behaves like trunc().
+
+Alternative ways to truncate:
+
+Using int():
+
+python
+print(int(3.7))   # Output: 3
+print(int(-2.3))  # Output: -2
+Using floor or ceiling:
+
+math.floor() rounds toward negative infinity.
+
+math.ceil() rounds toward positive infinity.
+
+Works with floats and integers:
+
+python
+print(math.trunc(7))      # Output: 7
+print(math.trunc(-4.9))   # Output: -4
+Comparison with Other Functions:
+Function	Example Input	Output	Behavior
+math.trunc(x)	3.7	3	Truncates toward zero.
+math.trunc(x)	-2.3	-2	Truncates toward zero.
+math.floor(x)	3.7	3	Rounds down to nearest integer.
+math.floor(x)	-2.3	-3	Rounds down (more negative).
+math.ceil(x)	3.2	4	Rounds up to nearest integer.
+math.ceil(x)	-2.3	-2	Rounds up (toward zero).
+int(x)	3.7	3	Truncates (same as trunc() in Python).
+int(x)	-2.3	-2	Truncates (same as trunc()).
+Use Case:
+When you need to discard the fractional part of a number without rounding (e.g., converting 3.9 to 3).
+
+Prefer int() for simplicity unless you explicitly need math.trunc() for clarity.
+
+
+
+
+
 
 
 
