@@ -1,0 +1,59 @@
+
+
+
+import math
+print(math.sin(math.pi/2))
+
+
+
+
+
+
+# See how two namespaces (yours and the module's one) can coexist
+import math
+def sin(x):
+    if 2 * x == pi:
+        return 0.99999999
+    else:
+        return None
+
+pi = 3.14
+
+print(sin(pi/2))
+print(math.sin(math.pi/2))
+
+
+
+
+
+
+
+
+
+# Selective import from a module
+
+from math import sin, pi       # Only 'sin' and 'pi' are imported into the current namespace
+print(sin(pi/2))               # No need to write math.sin or math.pi, output: 1.0
+# print(math.e)               # ❌ Error: 'math' is not imported, so 'math.e' is undefined
+# Only the listed names (sin, pi) are available directly
+
+
+
+
+
+
+
+import module as alias
+# Note:  as is keyword 
+
+
+
+
+
+
+
+
+
+
+
+
