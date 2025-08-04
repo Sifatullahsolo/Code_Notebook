@@ -55,5 +55,34 @@ Key Rules
 
 
 
+# dir() to explore namespaces
+
+import math
+print(dir())         # Shows names defined in the current scope (including 'math')
+print(dir(math))     # Shows all names (functions, constants) defined inside math module
+# Useful for exploring what’s available inside a module or current namespace
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
