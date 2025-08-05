@@ -210,6 +210,55 @@ print(sample(my_list, 5))  # Random     # [3, 1, 8, 9, 10]
 print(sample(my_list, 10))   # Random     #  [10, 8, 5, 1, 6, 4, 3, 9, 7, 2]
 
 ---------------------------------------------------------------------
+import platform
+
+print(platform.platform())    # Full system info (OS, version, etc.)
+print(platform.system())      # Just OS name (e.g. 'Windows')
+print(platform.release())      # OS version (e.g. '10')
+print(platform.machine())      # Type of machine (e.g. 'AMD64')
+print(platform.processor())      # 	Processor info
+print(platform.python_version())      # Python version (e.g. '3.11.6')
+print(platform.system())                # Returns OS name , like: windows or linux
+print(platform.version())        # Returns the OS version  
+print(platform.python_implementation())    # Returns the Python type you are using, usually "CPython"
+
+
+print(platform.python_version_tuple())    # e.g. ('3', '11', '6')
+# Returns the Python version as three parts:
+# Major version (e.g., 3)
+# Minor version (e.g., 11)
+# Patch number (e.g., 6)
+
+
+print(platform.processor())        # You want to know what kind of processor (CPU) your Python is running on.
+                                   # You're writing code that behaves differently based on hardware.
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
