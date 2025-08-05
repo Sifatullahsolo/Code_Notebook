@@ -2,12 +2,10 @@
 
 import math                 # Single module
 import os, sys              # Multiple (less readable)
-
-
+#
 Better:
 import os
 import sys
-
 
 
 2. Access Entities with Dot
@@ -46,28 +44,82 @@ Key Rules
 ✅ Use import module (safest).
 ✅ Use as to avoid conflicts.
 ❌ Avoid from module import *.
-
-
-
-
-
-
-
-
-
+----------------------------------------------------
 # dir() to explore namespaces
 
 import math
 print(dir())         # Shows names defined in the current scope (including 'math')
 print(dir(math))     # Shows all names (functions, constants) defined inside math module
 # Useful for exploring what’s available inside a module or current namespace
+---------------------------------------------------
+### pi
+import math
+print(math.pi)  # Output: 3.141592653589793
 
+π ≈ 3.141592653589793 (built-in precision in Python).
+Irrational: Decimal never ends (unlike 22/7 = 3.142857...).
+----------------------------------------------------------------
+r = radius = distance from center to edge of a circle
+Example: If a wheel is 10 cm wide, the radius is 5 cm.
 
+from math import pi  # take the value of π (pi = 3.14159...) from the math module
+radius = 5  # radius means: the distance from the center of the circle to the edge
 
+# Circle area
+area = pi * radius ** 2  
+# ** means "power" → radius ** 2 means: radius × radius (like 5 × 5)
+# formula: area = π × radius squared (π × r²)
 
+# Circle circumference
+circumference = 2 * pi * radius  
+# formula: circumference = 2 × π × radius (the total length around the circle)
+print("Area:", area)  # show the result for area
+print("Circumference:", circumference)  # show the result for circumference
+---------------------------------------------------------------------
+e (Euler's Number)
+# A special number (~2.718) used in growth/decay calculations.
+import math
+print(math.e)
+# Output: 2.718281828459045
+-------------------------------------
+The exp(x) function is a shortcut for a very common mathematical calculation: taking Euler's number (e) and raising it to the power of x.
+# e is a special number in math (about 2.718).
+# x is the number you want to use as the exponent.
+So, math.exp(2) is just a quick and accurate way of writing e2, which is about 7.389.
 
+The main purpose of this function is to easily work with things that grow or decay exponentially, 
+which is why the example mentions population growth.
 
+import math
+print(math.exp(2))        # e² ≈ 7.389
+------------------------------------------
+log(x) (Natural Log)
+Finds "how much to raise e to get x".
+print(math.log(10))  # ≈ 2.302 (because e^2.302 ≈ 10)
+------------------------------------------------
+log(x, b) (Custom Base Log)
+# Finds "how much to raise b to get x".
+Example: Decoding log scales (e.g., Richter scale for earthquakes).
 
+print(math.log(100, 10))  # 2 (because 10² = 100)
+-----------------------------------------------
+log10(x)
+It asks: "How many times do I need to multiply 10 to get x?"
+import math
+print(math.log10(1000))
+-----------------------------------------------------
+log2(x) 
+It asks:  "How many times do I need to multiply 2 to get x?"
+import math
+print(math.log2(8))  # 3.0
+---------------------------------------
+pow(x, y)
+It means:  "Multiply x by itself y times."
+# This is called raising to a power.
+🔸 Example:print(pow(2, 3))
+Means:  2 × 2 × 2 = 8
+✅ So the answer is 8
+----------------------------------------------------------
 
 
 
