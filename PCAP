@@ -252,7 +252,11 @@ print(platform.python_version_tuple())    # e.g. ('3', '11', '6')
 print(platform.processor())        # You want to know what kind of processor (CPU) your Python is running on.
                                    # You're writing code that behaves differently based on hardware.
 ----------------------------------------------------------------------
-
+__var__ is for magic methods that Python uses automatically, like __init__; think of it like a birth certificate that’s made for you.
+_var means “please treat this as private”, like a diary with a small lock — not truly hidden, but asking for privacy.
+__var starts with two underscores (but no ending ones) — Python secretly renames it to protect it, like hiding something in a labeled secret envelope.
+var_ adds an underscore at the end to avoid using a reserved word, like naming a dog “Stop_” so it doesn’t confuse the command “Stop.”
+----------------------------------------------------------------------------
 
 
 
