@@ -7,19 +7,14 @@ Module	A toolbox	A .py file with related functions
 Package	A whole shelf of toolboxes	A folder that holds modules (and maybe other folders!)
 Library	The whole library building	A big collection of packages (like math, random, numpy)
 Script / Program	A notebook where you use the tools	This is what you run (like my_code.py)
-
-
-🥇 1. Function
-What it is, how to make one, how to use one.
-
-🥈 2. Module
-How to make your own .py file with functions, and import it.
-
-🥉 3. Package
-How to group several modules together (just like folders).
-
-🏅 4. Library
-How Python gives you whole collections of modules (like math, random), and how to install new ones.
+EXAMPLE:
+from numpy.random import randint
+🧩
+numpy = Library		
+random = Package	 ( Folder inside numpy )
+random.py = Module	 (inside numpy/random)	Python file with functions
+randint = Function	( Does one job: gives a random integer )
+Script	Your .py file (e.g. main.py)	Where you write and run the code
 ---------------------------------------------------------------------------------------
 1. Import Whole Module
 
