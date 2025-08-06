@@ -257,8 +257,20 @@ _var means “please treat this as private”, like a diary with a small lock �
 __var starts with two underscores (but no ending ones) — Python secretly renames it to protect it, like hiding something in a labeled secret envelope.
 var_ adds an underscore at the end to avoid using a reserved word, like naming a dog “Stop_” so it doesn’t confuse the command “Stop.”
 ----------------------------------------------------------------------------
+if __name__ == "__main__":
+    print("Running tests...")
 
+    # Example test code:
+    # my_data = [1, 2, 3]
+    # print(my_function(my_data))
 
+🛠️ Use it in any module (your own helper file with functions) when you want to:
+* Run some test code just to check your functions
+* Make sure the test only runs when you run the file directly
+* Keep the test hidden when the module is imported into another program
+
+✨ It helps you test your work safely without bothering the person who imports your module.
+--------------------------------------------------------------------------------
 
 
 
