@@ -45,14 +45,14 @@ Key Rules
 ✅ Use as to avoid conflicts.
 ❌ Avoid from module import *.
 ----------------------------------------------------
-# dir() to explore namespaces
+dir() to explore namespaces
 
 import math
 print(dir())         # Shows names defined in the current scope (including 'math')
 print(dir(math))     # Shows all names (functions, constants) defined inside math module
 # Useful for exploring what’s available inside a module or current namespace
 ---------------------------------------------------
-### pi
+pi
 import math
 print(math.pi)  # Output: 3.141592653589793
 
@@ -186,6 +186,7 @@ This will always print the same 5 numbers:
 randrange(end)
 randrange(beg, end)
 randrange(beg, end, step)
+# end is not included in any of them.
 -------------------------
 randint(a, b)
 Gives a random whole number between a and b — both included.
@@ -206,19 +207,19 @@ choice(sequence)
 from random import choice, sample   # Only unique numbers
 my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 print(choice(my_list))  # 1 -> 10  but one sigle number will be printed 
-print(sample(my_list, 5))  # Random     # [3, 1, 8, 9, 10]
-print(sample(my_list, 10))   # Random     #  [10, 8, 5, 1, 6, 4, 3, 9, 7, 2]
+print(sample(my_list, 5))  # Random     # [3, 1, 8, 9, 10]            # Unique numbers
+print(sample(my_list, 10))   # Random     #  [10, 8, 5, 1, 6, 4, 3, 9, 7, 2]            # Unique numbers
 
 ---------------------------------------------------------------------
 import platform
 
-print(platform.platform())    # Full system info (OS, version, etc.)
-print(platform.system())      # Just OS name (e.g. 'Windows')
-print(platform.release())      # OS version (e.g. '10')
-print(platform.machine())      # Type of machine (e.g. 'AMD64')
+print(platform.platform())       # Full system info (OS, version, etc.)
+print(platform.system())         # Just OS name (e.g. 'Windows')
+print(platform.release())        # OS version (e.g. '10')
+print(platform.machine())        # Type of machine (e.g. 'AMD64')
 print(platform.processor())      # 	Processor info
-print(platform.python_version())      # Python version (e.g. '3.11.6')
-print(platform.system())                # Returns OS name , like: windows or linux
+print(platform.python_version()) # Python version (e.g. '3.11.6')
+print(platform.system())         # Returns OS name , like: windows or linux
 print(platform.version())        # Returns the OS version  
 print(platform.python_implementation())    # Returns the Python type you are using, usually "CPython"
 
