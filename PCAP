@@ -11,12 +11,12 @@ import sys
 2. Access Entities with Dot
 
 import math
-print(math.pi)             # Prefix with module name
+print(math.pi)            
 
 
 
 3. Import Specific Entities
-from math import pi, sin    # No prefix needed
+from math import pi, sin   
 print(sin(pi/2))           # Risk: Name conflicts!
 
 
