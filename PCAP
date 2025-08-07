@@ -271,6 +271,22 @@ if __name__ == "__main__":
 
 ✨ It helps you test your work safely without bothering the person who imports your module.
 --------------------------------------------------------------------------------
+from sys import path
+
+# 👇 Add the folder where your module.py lives
+path.append('C:\\Users\\user\\py\\modules')  # absolute path
+
+# You can also use a relative path if you're in the right folder
+# path.append('..\\modules')
+
+import module
+
+zeroes = [0 for i in range(5)]
+ones = [1 for i in range(5)]
+
+print(module.suml(zeroes))
+print(module.prodl(ones))
+__________________________________________________________________________________
 
 
 
