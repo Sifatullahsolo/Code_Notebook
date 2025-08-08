@@ -341,6 +341,7 @@ TL;DR: pip = Python’s app installer. Use it to add superpowers to your code! �
 pip install pygame                	Installs the pygame package system-wide (requires admin access)
 pip install --user pygame	        Installs pygame just for your user account (no admin needed)
 pip show pygame	                    Shows info about the installed pygame package (like version, location, dependencies)
+pip install -U package_name         # To ensure you have the latest version of an installed package:
 _________________________________________
 
 
@@ -446,17 +447,158 @@ display.flip()	Make the screen show up
 while run	Keep running until the user quits, clicks, or presses a key
 
 _____________________________________________________________________________---
+ASCI
+|18N
+UNICODE
 
 
-pip install -U package_name  
-# To ensure you have the latest version of an installed package:
 
 _______________________________________________________----
 
+# Multi Libe string 
+multiline = '''Line #1
+Line #2'''
 
+print(len(multiline))
+______________________________________________________________
+# Demonstrating the ord() function.
 
+char_1 = 'a'
+char_2 = ' '  # space
 
+print(ord(char_1))
+print(ord(char_2))
+__________________________________________________________
 
+# Demonstrating the chr() function.
+
+print(chr(97))
+print(chr(945))
+__________________________________________________
+alphabet = "abcdefghijklmnopqrstuvwxyz"
+print("f" in alphabet)
+------------------------------------------------------
+String is immutable
+but
+this below works .
+
+alphabet = "bcdefghijklmnopqrstuvwxy"
+alphabet = "a" + alphabet
+alphabet = alphabet + "z"
+print(alphabet)
+
+_________________________________________________
+Method	Works with strings?	Notes (very short)
+.capitalize()	✅ Yes	First letter uppercase
+.casefold()	✅ Yes	Lowercase, aggressive
+.center()	✅ Yes	Center the string
+.count()	✅ Yes	Count how many times a letter/word appears
+.endswith()	✅ Yes	Checks last part
+.startswith()	✅ Yes	Checks first part
+.find()	✅ Yes	Find position of part (or -1)
+.rfind()	✅ Yes	Like find, from right
+.index()	✅ Yes	Like find, gives error if not found
+.rindex()	✅ Yes	Like rfind, but error if not found
+.isalnum()	✅ Yes	Letters or numbers only?
+.isalpha()	✅ Yes	Letters only?
+.isdigit()	✅ Yes	Numbers only?
+.isdecimal()	✅ Yes	Like isdigit, stricter
+.isnumeric()	✅ Yes	Even more types of numbers
+.islower()	✅ Yes	All lowercase?
+.isupper()	✅ Yes	All uppercase?
+.isspace()	✅ Yes	Only spaces/tabs/newlines?
+.istitle()	✅ Yes	Like book title?
+.join()	✅ Yes	Join list into one string
+.lower()	✅ Yes	Make lowercase
+.upper()	✅ Yes	Make uppercase
+.strip()	✅ Yes	Remove outer spaces
+.lstrip()	✅ Yes	Remove left spaces
+.rstrip()	✅ Yes	Remove right spaces
+.replace()	✅ Yes	Change text inside string
+.split()	✅ Yes	Break string into words
+.rsplit()	✅ Yes	Like split, from right
+.splitlines()	✅ Yes	Break on new lines
+.swapcase()	✅ Yes	UPPER → lower, lower → UPPER
+.title()	✅ Yes	Make each word Title Case
+.zfill()	✅ Yes	Add zeros to left side
+
+❌ These methods are not for strings
+These belong to lists, sets, or dictionaries — not strings
+
+Method	Works with strings?	Belongs to...
+.append()	❌ No	lists only
+.extend()	❌ No	lists only
+.insert()	❌ No	lists only
+.remove()	❌ No	lists only
+.pop()	❌ No	lists only
+.clear()	❌ No	lists, dicts, sets
+.sort()	❌ No	lists only
+.reverse()	❌ No	lists only
+.update()	❌ No	dicts, sets
+.keys()	❌ No	dict only
+.values()	❌ No	dict only
+.items()	❌ No	dict only
+.add()	❌ No	sets only
+.discard()	❌ No	sets only
+del         ❌  alphabet[0]  # TypeError    
+
+✅ Built-in Functions that do work with strings (bonus recap)
+Function	Works with strings?	Use for…
+len()	✅ Yes	Length
+ord()	✅ Yes	Letter → number
+chr()	✅ Yes	Number → letter
+sorted()	✅ Yes	Alphabetical order
+reversed()	✅ Yes	Reverse a string
+enumerate()	✅ Yes	Index + character
+type()	✅ Yes	Check type
+list()	✅ Yes	Break string into characters
+_______________________________________________________________
+print(min("aAbByYzZ"))       # A  Python compares characters by their Unicode/ASCII values, and 'A' (65) has a lower value than 'a' (97).
+print(max("aAbByYzZ"))       # z
+print(sorted("Zoo"))         # ['Z', 'o', 'o']  # Python sorts strings based on Unicode/ASCII values, and uppercase 'Z' (90) has a lower value than lowercase 'o' (111).
+print("Zebra".lower())       # zebra
+print("Zebra".upper())       # ZEBRA
+print("Zebra".swapcase())    # zEBRA
+print("123abc".isdigit())    # False
+print("123".isdigit())       # True
+print("abc".isalpha())       # True
+print("abc123".isalpha())    # False
+print("abc123".isalnum())    # True
+print("abc 123".isalnum())   # False
+print("    ".isspace())      # True
+print("   a   ".strip())     # a
+print("a,b,c".split(","))    # ['a', 'b', 'c']
+print("abc".replace("b", "x"))  # axc
+print(":".join("abc"))       # a:b:c
+print("Hello\nWorld".splitlines())  # ['Hello', 'World']
+print("python".startswith("py"))    # True
+print("python".endswith("on"))      # True
+print("hello world".title())        # Hello World
+print("HELLO".isupper())            # True
+print("hello".islower())            # True
+print(" 42 ".zfill(5))              # 0042 
+print("42".zfill(5))                # 00042
+print(ord("A"))                     # 65
+print(chr(122))                     # z
+print(len("😊"))                    # 1
+print("😊".encode())                # b'\xf0\x9f\x98\x8a'
+____________________________________________________________________
+print("Alpha".capitalize())  # Alpha
+print('ALPHA'.capitalize())  # Alpha
+print(' Alpha'.capitalize())  #  alpha
+print('123'.capitalize())  # 123
+print("αβγδ".capitalize())  # Αβγδ
+______________________________________________
+# ( on string ) index() method:  print("aAbByYzZaA".index("b"))  # 2
+
+_______________________________________________
+print(len("\n\n"))        #outputs 2
+
+___________________________________________
+ Both of the following expressions are always true:
+chr(ord(character)) == character
+ord(chr(codepoint)) == codepoint
+__________________________________________________
 
 
 
