@@ -491,12 +491,17 @@ _________________________________________________
 Method	Works with strings?	Notes (very short)
 .capitalize()	✅ Yes	First letter uppercase
 .casefold()	✅ Yes	Lowercase, aggressive
-.center()	✅ Yes	Center the string
+.center()	✅ Yes	Centers the string # print('[' + 'alpha'.center(10) + ']')  # print('[' + 'gamma'.center(20, '*') + ']')
 .count()	✅ Yes	Count how many times a letter/word appears
-.endswith()	✅ Yes	Checks last part
-.startswith()	✅ Yes	Checks first part
-.find()	✅ Yes	Find position of part (or -1)
+.endswith()	✅ Yes	Checks last part    # print("yes") if "epsilon".endswith("on") else print("no")
+.startswith()	✅ Yes	Checks first part # print("omega".startswith("om"))  # True
+.find()	✅ returns the lowest index of sub in the string, or -1 if not found, e.g. "gamma".find("mm") → 2.
+
 .rfind()	✅ Yes	Like find, from right
+print("tau tau tau".rfind("ta"))       # Search "ta" from right to left    #8
+print("tau tau tau".rfind("ta", 9))    # Start searching from index 9 (from right)        # -1
+print("tau tau tau".rfind("ta", 3, 9)) # Search between index 3 and 9 (right to left)        # 4
+
 .index()	✅ Yes	Like find, gives error if not found
 .rindex()	✅ Yes	Like rfind, but error if not found
 .isalnum()	✅ Yes	Letters or numbers only?
@@ -508,19 +513,36 @@ Method	Works with strings?	Notes (very short)
 .isupper()	✅ Yes	All uppercase?
 .isspace()	✅ Yes	Only spaces/tabs/newlines?
 .istitle()	✅ Yes	Like book title?
-.join()	✅ Yes	Join list into one string
-.lower()	✅ Yes	Make lowercase
+.join()	✅ Yes	Join list into one string. # print(",".join(["omicron", "pi", "rho"]))
+.lower()	✅ Yes	Make lowercase,  # print("SiGmA=60".lower())  # Output: sigma=60
 .upper()	✅ Yes	Make uppercase
-.strip()	✅ Yes	Remove outer spaces
-.lstrip()	✅ Yes	Remove left spaces
+.strip()	✅ Yes	Remove leading and trailing whitespaces.
+
+.lstrip() ✅removes spaces or characters from the start (left side) of a string. #
+print("pythoninstitute.org".lstrip(".org"))  # removes all '.', 'o', 'r', 'g' from start if any
+print("www.cisco.com".lstrip("w."))          # removes all 'w' and '.' from start
+
 .rstrip()	✅ Yes	Remove right spaces
-.replace()	✅ Yes	Change text inside string
-.split()	✅ Yes	Break string into words
+print("[" + " upsilon ".rstrip() + "]")
+print("cisco.com".rstrip(".com"))
+
+
+.replace()	✅ Yes	Change text inside string 
+text = "This is it!"
+print(text.replace("is", "are", 1))  # Replace first "is"   # Thare is it # is in 'This' changed with are
+print(text.replace("is", "are", 2))  # Replace first two "is"  # This are it
+print("Apple juice".replace("juice", ""))        #Apple
+
+.split()	✅ Yes	Break string into words # print("phi       chi\npsi".split())  #Output: ['phi', 'chi', 'psi']
+To join these pieces back into one string, use the join() method.
+join() is the reverse of split(). # print(",".join("phi       chi\npsi".split()))
+
+
 .rsplit()	✅ Yes	Like split, from right
 .splitlines()	✅ Yes	Break on new lines
-.swapcase()	✅ Yes	UPPER → lower, lower → UPPER
+.swapcase()	✅ Yes	UPPER → lower, lower → UPPER  # print("Hello World".swapcase())  # Output: "hELLO wORLD"
 .title()	✅ Yes	Make each word Title Case
-.zfill()	✅ Yes	Add zeros to left side
+.zfill()	✅ Yes	Add zeros to left side        # print("42".zfill(5))  # Output: "00042"
 
 ❌ These methods are not for strings
 These belong to lists, sets, or dictionaries — not strings
