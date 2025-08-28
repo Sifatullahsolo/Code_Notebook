@@ -39,6 +39,71 @@ print(sin(pi/2))           # Risk: Name conflicts!
 
 
 
+
+______________________________________________________
+
+
+
+
+
+hasattr() in Python
+
+👉 Checks if an object has a property or method.
+
+Syntax:
+
+hasattr(object, "attribute_name")
+
+
+✅ Returns True if it exists
+❌ Returns False if not
+
+Example:
+
+class Car:
+    def __init__(self):
+        self.color = "Red"
+
+    def drive(self):
+        print("Vroom!")
+
+my_car = Car()
+
+print(hasattr(my_car, "color"))  # True
+print(hasattr(my_car, "speed"))  # False
+print(hasattr(my_car, "drive"))  # True
+
+
+💡 Think of it like asking:
+"Does this object have this thing?"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+__________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
 4. Import All (Avoid!)
 from math import *         # Imports everything (risky)
 print(pi)                  # No prefix, but may override your vars
